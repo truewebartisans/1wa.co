@@ -3,160 +3,160 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://1wa.co/ru/posts/2019/05/%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0%D1%81%D1%82%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE-macos-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BD%D0%B0-golang-%D0%B8-react.js-%D1%81-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B9-%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D0%BE%D0%B9-%D0%BA%D0%BE%D0%B4%D0%B0-%D0%B1%D0%B5%D0%B7-%D0%BC%D0%B0%D0%B3%D0%B8%D0%B8/</loc>
+    <loc>https://truewebartisans.com/ru/posts/2019/05/%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0%D1%81%D1%82%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE-macos-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BD%D0%B0-golang-%D0%B8-react.js-%D1%81-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B9-%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D0%BE%D0%B9-%D0%BA%D0%BE%D0%B4%D0%B0-%D0%B1%D0%B5%D0%B7-%D0%BC%D0%B0%D0%B3%D0%B8%D0%B8/</loc>
     <lastmod>2019-05-30T23:10:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://1wa.co/posts/2019/05/creating-a-native-macos-app-on-golang-and-react.js-with-full-code-protection-without-magic/"
+                href="https://truewebartisans.com/posts/2019/05/creating-a-native-macos-app-on-golang-and-react.js-with-full-code-protection-without-magic/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://1wa.co/ru/posts/2019/05/%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0%D1%81%D1%82%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE-macos-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BD%D0%B0-golang-%D0%B8-react.js-%D1%81-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B9-%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D0%BE%D0%B9-%D0%BA%D0%BE%D0%B4%D0%B0-%D0%B1%D0%B5%D0%B7-%D0%BC%D0%B0%D0%B3%D0%B8%D0%B8/"
+                href="https://truewebartisans.com/ru/posts/2019/05/%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0%D1%81%D1%82%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE-macos-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BD%D0%B0-golang-%D0%B8-react.js-%D1%81-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B9-%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D0%BE%D0%B9-%D0%BA%D0%BE%D0%B4%D0%B0-%D0%B1%D0%B5%D0%B7-%D0%BC%D0%B0%D0%B3%D0%B8%D0%B8/"
                 />
   </url>
   
   <url>
-    <loc>https://1wa.co/ru/posts/</loc>
-    <lastmod>2019-05-30T23:10:00+03:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://1wa.co/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="https://1wa.co/ru/posts/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://1wa.co/ru/tags/</loc>
+    <loc>https://truewebartisans.com/ru/posts/</loc>
     <lastmod>2019-05-30T23:10:00+03:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://1wa.co/tags/"
+                href="https://truewebartisans.com/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://1wa.co/ru/tags/"
+                href="https://truewebartisans.com/ru/posts/"
                 />
   </url>
   
   <url>
-    <loc>https://1wa.co/ru/</loc>
+    <loc>https://truewebartisans.com/ru/tags/</loc>
     <lastmod>2019-05-30T23:10:00+03:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://1wa.co/"
+                href="https://truewebartisans.com/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://1wa.co/ru/"
+                href="https://truewebartisans.com/ru/tags/"
                 />
   </url>
   
   <url>
-    <loc>https://1wa.co/ru/tags/golang/</loc>
+    <loc>https://truewebartisans.com/ru/</loc>
     <lastmod>2019-05-30T23:10:00+03:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://1wa.co/tags/golang/"
+                href="https://truewebartisans.com/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://1wa.co/ru/tags/golang/"
+                href="https://truewebartisans.com/ru/"
                 />
   </url>
   
   <url>
-    <loc>https://1wa.co/ru/tags/howto/</loc>
+    <loc>https://truewebartisans.com/ru/tags/golang/</loc>
     <lastmod>2019-05-30T23:10:00+03:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://1wa.co/tags/howto/"
+                href="https://truewebartisans.com/tags/golang/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://1wa.co/ru/tags/howto/"
+                href="https://truewebartisans.com/ru/tags/golang/"
                 />
   </url>
   
   <url>
-    <loc>https://1wa.co/ru/tags/macos/</loc>
+    <loc>https://truewebartisans.com/ru/tags/howto/</loc>
     <lastmod>2019-05-30T23:10:00+03:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://1wa.co/tags/macos/"
+                href="https://truewebartisans.com/tags/howto/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://1wa.co/ru/tags/macos/"
+                href="https://truewebartisans.com/ru/tags/howto/"
                 />
   </url>
   
   <url>
-    <loc>https://1wa.co/ru/tags/native-app/</loc>
+    <loc>https://truewebartisans.com/ru/tags/macos/</loc>
     <lastmod>2019-05-30T23:10:00+03:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://1wa.co/tags/native-app/"
+                href="https://truewebartisans.com/tags/macos/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://1wa.co/ru/tags/native-app/"
+                href="https://truewebartisans.com/ru/tags/macos/"
                 />
   </url>
   
   <url>
-    <loc>https://1wa.co/ru/tags/reactjs/</loc>
+    <loc>https://truewebartisans.com/ru/tags/native-app/</loc>
     <lastmod>2019-05-30T23:10:00+03:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://1wa.co/tags/reactjs/"
+                href="https://truewebartisans.com/tags/native-app/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://1wa.co/ru/tags/reactjs/"
+                href="https://truewebartisans.com/ru/tags/native-app/"
                 />
   </url>
   
   <url>
-    <loc>https://1wa.co/ru/categories/</loc>
+    <loc>https://truewebartisans.com/ru/tags/reactjs/</loc>
+    <lastmod>2019-05-30T23:10:00+03:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://1wa.co/categories/"
+                href="https://truewebartisans.com/tags/reactjs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://1wa.co/ru/categories/"
+                href="https://truewebartisans.com/ru/tags/reactjs/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://truewebartisans.com/ru/categories/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://truewebartisans.com/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://truewebartisans.com/ru/categories/"
                 />
   </url>
   
