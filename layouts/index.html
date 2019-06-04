@@ -1,0 +1,21 @@
+{{ define "main" }}
+    <main aria-role="main">
+        <div>
+            <div class="char">
+                <img src="/images/webartisans-char-bw.png" alt="true web artisans logo"/>
+            </div>
+
+            <h1 class="title">{{ .Site.Title }}</h1>
+
+            {{- with .Site.Params.homeSubtitle }}
+                <p>{{.}}</p>
+            {{- end }}
+
+            {{- with .Site.Params.social }}
+                <div>
+                    {{ partial "social-icons.html" . }}
+                </div>
+            {{- end }}
+        </div>
+    </main>
+{{ end }}
