@@ -1,0 +1,143 @@
+:root {
+  --gradient-right: linear-gradient(to right, #ff2e63, #eec60a);
+  --gradient-top: linear-gradient(to top, #ff2e63, #eec60a);
+  --webkit-gradient-right: -webkit-linear-gradient(
+    to right,
+    from(#ff2e63),
+    to(#eec60a)
+  );
+  --webkit-gradient-top: -webkit-linear-gradient(
+    to bottom,
+    from(#ff2e63),
+    to(#eec60a)
+  );
+}
+
+body {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+body .header .logo img {
+  filter: invert(100%);
+}
+body.dark-theme .header .logo img {
+  filter: invert(0%);
+}
+body.dark-theme .char img {
+  filter: invert(100%);
+}
+body.dark-theme hr {
+  background-image: var(--webkit-gradient-right);
+  background-image: var(--gradient-right);
+}
+body.dark-theme blockquote {
+  border-left: 2px solid;
+  border-image-source: var(--webkit-gradient-top);
+  border-image-source: var(--gradient-top);
+  border-image-slice: 1;
+}
+body.dark-theme .footer {
+  background: #252627;
+}
+
+code,
+code[class*="language-"],
+pre,
+pre[class*="language-"] {
+  font-family: Hack, monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+h1.title {
+  font-weight: normal;
+}
+
+h1.post-title,
+h2.post-title {
+  line-height: 3rem;
+}
+
+h2.post-title {
+  font-weight: bold;
+}
+
+hr {
+  background-image: var(--webkit-gradient-right);
+  background-image: var(--gradient-right);
+  border: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  margin: 2rem 0;
+}
+
+blockquote {
+  border-image-source: var(--webkit-gradient-top);
+  border-image-source: var(--gradient-top);
+  border-image-slice: 1;
+}
+
+.header {
+  height: 90px;
+}
+.header .logo img {
+  width: 250px;
+  height: 100%;
+}
+
+.char img {
+  width: 80%;
+  margin: 2rem auto 0;
+}
+
+.posts .post-item {
+  border-bottom: 0;
+}
+.posts .post-item:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  position: relative;
+  background-image: var(--webkit-gradient-right);
+  background-image: var(--gradient-right);
+}
+
+.footer {
+  background: #fafafa;
+}
+.footer__content {
+  color: #555555;
+}
+
+@media (max-width: 684px) {
+  h1.post-title,
+  h2.post-title {
+    line-height: 2.4rem;
+  }
+  .header {
+    height: 70px;
+  }
+  .header .logo img {
+    width: 70%;
+  }
+  table td img[alt="Vic Shóstak avatar"] {
+    display: none;
+  }
+}
