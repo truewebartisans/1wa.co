@@ -7,7 +7,7 @@
 other = "Перевод"
 
 [postAvailable]
-other = "Эта статья так же доступна на"
+other = "Tак же доступна на"
 
 
 # 404.html
@@ -25,7 +25,7 @@ other = "Ой, страница не найдена..."
 # posts/single.html
 #
 [readingTime]
-one   = "Одна минута"
+# one   = "Одна минута"
 other = "{{ .Count }} минут"
 
 [tableOfContents]

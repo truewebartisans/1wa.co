@@ -16,14 +16,14 @@
 
         <article>
             <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
+            
+            <hr/>
 
             {{- if .Params.toc }}
-                <hr />
                 <aside id="toc">
-                <div class="toc-title">{{ i18n "tableOfContents" }}</div>
+                    <h2 class="toc-title">{{ i18n "tableOfContents" }}</h2>
                     {{ .TableOfContents }}
                 </aside>
-                <hr />
             {{- end }}
 
             {{ with .Params.Cover }}

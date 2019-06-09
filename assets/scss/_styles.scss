@@ -91,6 +91,7 @@ blockquote {
   border-image-source: var(--webkit-gradient-top);
   border-image-source: var(--gradient-top);
   border-image-slice: 1;
+  font-style: italic;
 }
 
 .header {
@@ -124,6 +125,15 @@ blockquote {
 }
 .footer__content {
   color: #555555;
+}
+
+#TableOfContents > ul {
+  padding: 0;
+  margin-left: 0;
+}
+
+#TableOfContents > ul > li {
+  list-style: none;
 }
 
 @media (max-width: 684px) {
