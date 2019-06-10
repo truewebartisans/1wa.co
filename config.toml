@@ -13,7 +13,7 @@ rssLimit  = 10  # Maximum number of items in the RSS feed.
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License." 
 
 # googleAnalytics = ""
-# disqusShortname = ""
+disqusShortname = "1wa"
 
 archetypeDir = "archetypes"
 contentDir   = "content"
@@ -60,6 +60,7 @@ disableHugoGeneratorInject = false
   images = [""]
 
   homeSubtitle = ""
+  comments = true
 
   # Prefix of link to the git commit detail page. GitInfo must be enabled.
   # gitUrl = ""
