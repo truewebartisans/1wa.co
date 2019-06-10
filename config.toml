@@ -60,7 +60,6 @@ disableHugoGeneratorInject = false
   images = [""]
 
   homeSubtitle = ""
-  comments = true
 
   # Prefix of link to the git commit detail page. GitInfo must be enabled.
   # gitUrl = ""
