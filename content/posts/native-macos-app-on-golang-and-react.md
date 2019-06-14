@@ -245,7 +245,7 @@ cd ui && npm start && open http://localhost:3000
 npm i --save axios
 ```
 
-#### Code listing of the ./ui/src/App.js file
+#### Code listing for ./ui/src/App.js file
 
 ```jsx
 // Импортируем React и методы хуков
@@ -295,3 +295,132 @@ export default App;
 ```
 
 That's all, the frontend for the application is ready! 👌
+
+### Application Backend
+
+Install the necessary packages:
+
+```powershell
+dep ensure -add github.com/gobuffalo/packr
+dep ensure -add github.com/zserge/webview
+```
+
+Also, we need the `packr` utility, which should be available for calling from the console in `$GOPATH/bin/packr`:
+
+```powershell
+go get -u github.com/gobuffalo/packr/packr
+```
+
+#### Code listing for ./main.go file
+
+```go
+package main
+
+import (
+	"encoding/json"
+	"net/http"
+
+	"github.com/gobuffalo/packr"
+	"github.com/zserge/webview"
+)
+
+// Message : struct for message
+type Message struct {
+	Text string `json:"text"`
+}
+
+func main() {
+	// Bind folder path for packaging with Packr
+	folder := packr.NewBox("./ui/build")
+
+	// Handle to ./static/build folder on root path
+	http.Handle("/", http.FileServer(folder))
+
+	// Handle to showMessage func on /hello path
+	http.HandleFunc("/hello", showMessage)
+
+	// Run server at port 8000 as goroutine
+	// for non-block working
+	go http.ListenAndServe(":8000", nil)
+
+	// Let's open window app with:
+	//  - name: Golang App
+	//  - address: http://localhost:8000
+	//  - sizes: 800x600 px
+	//  - resizable: true
+	webview.Open("Golang App", "http://localhost:8000", 800, 600, true)
+}
+
+func showMessage(w http.ResponseWriter, r *http.Request) {
+	// Create Message JSON data
+	message := Message{"World"}
+
+	// Return JSON encoding to output
+	output, err := json.Marshal(message)
+
+	// Catch error, if it happens
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	// Set header Content-Type
+	w.Header().Set("Content-Type", "application/json")
+
+	// Write output
+	w.Write(output)
+}
+```
+
+## Build the application
+
+```powershell
+# Creating the directory structure of macOS app
+mkdir -p helloworld.app/Contents/MacOS
+
+# Compile ./main.go to app folder
+go build -o example.app/Contents/MacOS/helloworld
+
+# Run application
+open helloworld.app
+```
+
+![gif result](https://user-images.githubusercontent.com/11155743/59463057-bd2c9980-8e2d-11e9-84f1-7ad1aac6f98c.gif)
+
+## Cross compilation for Windows and GNU/Linux
+
+The theoretical block and the code given in the article are relevant for developing similar applications for other operating systems. In this case, the code remains unchanged.
+
+> Write the code once — run everywhere!
+
+This is made possible by the cross-system nature. You can compile the executable file.
+
+- GNU/Linux — executable binary file;
+- Microsoft Windows — executable file `.exe`;
+- Apple macOS — a binary file located inside the `.app` structure;
+
+We will look at this in the following articles.
+
+Stay tuned, comment and write only good code!
+
+## Securing material
+
+You are at the end of the article. Now you know a lot more than 15 minutes ago. Take my congratulations! 🎉
+
+Separate 10-15 minutes and the read text restored in memory and the studied code from articles. Next, try to answer the questions and do the exercises in order to better consolidate the material.
+
+> Yes, you can pry, but only if you could not remember.
+
+### Questions
+
+1. What is the function of the standard go package `net/http` used to mount folders to the specified address (route)?
+2. What does the `Marshal` function do from the standard Go package `encoding/json`?
+3. What parameters need to be changed in the source code of the Full HD application?
+4. If you want to start a web server without goroutine?
+5. What is the command `packr build ./main.go`?
+
+### Exercises
+
+- Rewrite the code of the AJAX request (in the frontend application) without using the `axios` library. _Hint: use the features_ [_Fetch API_](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
+- Add more JSON data to the frontend output in the `showMessage` function. _Example: add a new attribute `Emoji` to the`Message` structure and output it (with your favorite smiley) after the `Text`_ attribute.
+- Try to improve the appearance of your application, for example, using the Material UI visual component library ([GitHub](https://github.com/mui-org/material-ui)).

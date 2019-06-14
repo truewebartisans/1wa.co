@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>True web artisans</title>
+    <link>https://truewebartisans.com/</link>
+    <description>Recent content on True web artisans</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC-ND 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 30 May 2019 23:10:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://truewebartisans.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Creating a native macOS app on Golang and React.js with full code protection (without magic)</title>
+      <link>https://truewebartisans.com/posts/2019/05/native-macos-app-on-golang-and-react/</link>
+      <pubDate>Thu, 30 May 2019 23:10:00 +0300</pubDate>
+      
+      <guid>https://truewebartisans.com/posts/2019/05/native-macos-app-on-golang-and-react/</guid>
+      <description>Introduction Welcome to the next article in the “How to” series! This time, we will analyze the creation of a native desktop application for macOS, write a little code on Golang and React.js, which will have copy protection.
+This time, we will try to do without magic!
+Objectives of the article  Show one of the easiest ways to create a native desktop application for macOS on Golang; Show the option to protect the code of your application from being modified by third parties (for example, during commercial distribution);  Instruments Work Environment  Go 1.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://truewebartisans.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://truewebartisans.com/about/</guid>
+      <description>The web development team with extensive experience in UX, design, programming, copywriting and business intelligence fields.
+We provide our experience for complex service and business communication solutions:
+ Progressive web applications (PWA) Modern websites (API-based SPA) Chatbots (Facebook Messenger, Telegram, Viber, VK)  Technology &amp;amp; Philosophy First of all, we are developers who know a lot about DX and support large projects in the long run. Therefore, all of our projects have excellent documentation and clear code.</description>
+    </item>
+    
+  </channel>
+</rss>

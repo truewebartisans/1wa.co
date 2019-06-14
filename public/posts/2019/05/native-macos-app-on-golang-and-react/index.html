@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="Vic Shóstak ">
+<meta name="description"
+    content="Introduction Welcome to the next article in the “How to” series! This time, we will analyze the creation of a native desktop application for macOS, write a little code on Golang and React.js, which will have copy protection.
+This time, we will try to do without magic!
+Objectives of the article  Show one of the easiest ways to create a native desktop application for macOS on Golang; Show the option to protect the code of your application from being modified by third parties (for example, during commercial distribution);  Instruments Work Environment  Go 1." />
+<meta name="keywords" content="web development team, web dev team, online business improve, web development, development team, online business" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://truewebartisans.com/posts/2019/05/native-macos-app-on-golang-and-react/" />
+
+
+<title>
+    
+    Creating a native macOS app on Golang and React.js with full code protection (without magic) | True web artisans  → The web development team, which always thinks about your online business
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://truewebartisans.com/main.min.1939c2f4e3bfdb6dae14d7a00fd0f65b5430a353abe891847dc375d8b18f09ab.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://truewebartisans.com/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://truewebartisans.com/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://truewebartisans.com/favicon-16x16.png">
+<link rel="manifest" href="https://truewebartisans.com/site.webmanifest">
+<link rel="mask-icon" href="https://truewebartisans.com/safari-pinned-tab.svg" color="#252627">
+<link rel="shortcut icon" href="https://truewebartisans.com/favicon.ico">
+<meta name="theme-color" content="#252627">
+<meta itemprop="name" content="Creating a native macOS app on Golang and React.js with full code protection (without magic)">
+<meta itemprop="description" content="Creating a native macOS app on Golang and React.js with full code protection (without magic)">
+
+
+<meta itemprop="datePublished" content="2019-05-30T23:10:00&#43;03:00" />
+<meta itemprop="dateModified" content="2019-05-30T23:10:00&#43;03:00" />
+<meta itemprop="wordCount" content="1643">
+
+
+
+<meta itemprop="keywords" content="howto,golang,reactjs,macos,native app," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://truewebartisans.com"/>
+
+<meta name="twitter:title" content="Creating a native macOS app on Golang and React.js with full code protection (without magic)"/>
+<meta name="twitter:description" content="Creating a native macOS app on Golang and React.js with full code protection (without magic)"/>
+
+
+
+
+<meta property="article:published_time" content="2019-05-30 23:10:00 &#43;0300 MSK" />
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://truewebartisans.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <img src="https://truewebartisans.com/images/webartisans-logo-full-white.svg" alt="true web artisans logo" />
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://truewebartisans.com/about/">About</a></li><li><a href="https://truewebartisans.com/posts/">Posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>8 minutes
+
+            
+                | Article also available in
+                
+                    <a href="https://truewebartisans.com/ru/posts/2019/05/native-macos-app-on-golang-and-react/"><span class="flag flag-icon flag-icon-ru flag-icon-squared"></span></a>
+                
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h1 class="post-title"><a href="https://truewebartisans.com/posts/2019/05/native-macos-app-on-golang-and-react/">Creating a native macOS app on Golang and React.js with full code protection (without magic)</a></h1>
+            
+            <hr/>
+                <aside id="toc">
+                    <h2 class="toc-title">Table of Contents</h2>
+                    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#objectives-of-the-article">Objectives of the article</a></li>
+</ul></li>
+<li><a href="#instruments">Instruments</a>
+<ul>
+<li><a href="#work-environment">Work Environment</a></li>
+<li><a href="#operating-system">Operating system</a></li>
+<li><a href="#package-and-dependency-manager">Package and Dependency Manager</a></li>
+</ul></li>
+<li><a href="#used-golang-packages">Used Golang Packages</a></li>
+<li><a href="#used-node-js-libraries">Used Node.js libraries</a></li>
+<li><a href="#theoretical-base">Theoretical base</a>
+<ul>
+<li><a href="#net-http">net/http</a>
+<ul>
+<li><a href="#http-fileserver">http.FileServer()</a></li>
+</ul></li>
+<li><a href="#gobuffalo-packr">gobuffalo/packr</a></li>
+<li><a href="#zserge-webview">zserge/webview</a></li>
+</ul></li>
+<li><a href="#structure-of-macos-application">Structure of macOS application</a>
+<ul>
+<li><a href="#description-of-main-files-and-folders">Description of main files and folders</a></li>
+</ul></li>
+<li><a href="#write-the-code">Write the code</a>
+<ul>
+<li><a href="#memo-for-beginners-copy-paste-developers">Memo for beginners/copy-paste developers</a></li>
+<li><a href="#frontend-for-application">Frontend for application</a>
+<ul>
+<li><a href="#code-listing-for-ui-src-app-js-file">Code listing for ./ui/src/App.js file</a></li>
+</ul></li>
+<li><a href="#application-backend">Application Backend</a>
+<ul>
+<li><a href="#code-listing-for-main-go-file">Code listing for ./main.go file</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#build-the-application">Build the application</a></li>
+<li><a href="#cross-compilation-for-windows-and-gnu-linux">Cross compilation for Windows and GNU/Linux</a></li>
+<li><a href="#securing-material">Securing material</a>
+<ul>
+<li><a href="#questions">Questions</a></li>
+<li><a href="#exercises">Exercises</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+                </aside>
+
+                <hr/>
+
+            
+
+            <div class="post-content">
+                
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Welcome to the next article in the “How to” series! This time, we will analyze the creation of a native desktop application for macOS, write a little code on Golang and React.js, which will have copy protection.</p>
+
+<p>This time, we will try to do without magic!</p>
+
+<h3 id="objectives-of-the-article">Objectives of the article</h3>
+
+<ol>
+<li>Show one of the easiest ways to create a native desktop application for macOS on Golang;</li>
+<li>Show the option to protect the code of your application from being modified by third parties (for example, during commercial distribution);</li>
+</ol>
+
+<h2 id="instruments">Instruments</h2>
+
+<h3 id="work-environment">Work Environment</h3>
+
+<ul>
+<li>Go <code>1.12.5</code>;</li>
+<li>Node.js <code>12.3.1</code>;</li>
+</ul>
+
+<h3 id="operating-system">Operating system</h3>
+
+<ul>
+<li>Apple macOS <code>10.14.5</code> Mojave (darwin/amd64);</li>
+</ul>
+
+<h3 id="package-and-dependency-manager">Package and Dependency Manager</h3>
+
+<ul>
+<li>dep <code>0.5.3</code> (Golang);</li>
+<li>npm <code>6.9.0</code> (Node.js);</li>
+</ul>
+
+<h2 id="used-golang-packages">Used Golang Packages</h2>
+
+<ul>
+<li><code>net/http</code> - standard package for creating a web server (<a href="https://golang.org/pkg/net/http/" target="_blank">godoc</a>);</li>
+<li><code>gobuffalo/packr</code> - package for packaging all the necessary sources into one executable binary file (<a href="https://github.com/gobuffalo/packr" target="_blank">GitHub</a>);</li>
+<li><code>zserge/webview</code> - cross-platform package for creating a native operating system window with a built-in browser (<a href="https://github.com/zserge/webview" target="_blank">GitHub</a>);</li>
+</ul>
+
+<h2 id="used-node-js-libraries">Used Node.js libraries</h2>
+
+<ul>
+<li><code>facebook/create-react-app</code> - front-end for macOS-application (<a href="https://github.com/facebook/create-react-app" target="_blank">GitHub</a>);</li>
+<li><code>axios/axios</code> - for easier writing of AJAX requests (<a href="https://github.com/axios/axios" target="_blank">GitHub</a>);</li>
+</ul>
+
+<h2 id="theoretical-base">Theoretical base</h2>
+
+<p>To better understand what is happening, I suggest you examine the work of some of the packages on which we will rely and use.</p>
+
+<h3 id="net-http">net/http</h3>
+
+<p>A package that provides an implementation of the HTTP client and server. Included in the standard Go delivery and does not require separate installation and configuration.</p>
+
+<p>It is interesting to us, as it is very easy to understand, has good documentation and has the function <code>http.FileServer()</code>.</p>
+
+<p>For more details, see <a href="https://golang.org/pkg/net/http/#pkg-overview" target="_blank">official documentation</a>.</p>
+
+<h4 id="http-fileserver">http.FileServer()</h4>
+
+<p>This function is the key and gives the web server full access to the specified folder and all its files. That is, the <code>http.FileServer()</code> function allows you to mount a folder to any specified address (route) of the web server.</p>
+
+<p>For example, mount the root folder <code>./static/images/photos</code> so that it is available at <code>http://localhost:8000/photos</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Handle</span>(<span style="color:#e6db74">&#34;/photos&#34;</span>, <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">FileServer</span>(<span style="color:#e6db74">&#34;./static/images/photos&#34;</span>))</code></pre></div>
+<h3 id="gobuffalo-packr">gobuffalo/packr</h3>
+
+<p>Package with a talking title. It is he who will allow us to pack all the necessary files into one binary file.</p>
+
+<blockquote>
+<p>Please note that the article describes how to work with the <code>v1</code> branch.</p>
+</blockquote>
+
+<p>Suppose we have the following project directory structure:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">tree .
+
+├── main.go
+└── templates
+    ├── admin
+    │   └── index.html
+    └── index.html</code></pre></div>
+<p>The file <code>./main.go</code> contains:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+
+	<span style="color:#e6db74">&#34;github.com/gobuffalo/packr&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#75715e">// Folder, with templates that are needed
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// add to binary file (pack)
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">box</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">packr</span>.<span style="color:#a6e22e">NewBox</span>(<span style="color:#e6db74">&#34;./templates&#34;</span>)
+
+	<span style="color:#75715e">// We search file inside the folder
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">box</span>.<span style="color:#a6e22e">FindString</span>(<span style="color:#e6db74">&#34;admin/index.html&#34;</span>)
+
+	<span style="color:#75715e">// If file is not found, then error
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">err</span>)
+	}
+
+	<span style="color:#75715e">// Display file content
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">s</span>)
+}</code></pre></div>
+<p>Now let&rsquo;s compile the project into an executable binary file. At the same time, the <code>packr</code> package will pack the entire contents of the<code>./templates</code> folder into it:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">packr build ./main.go</code></pre></div>
+<p>If you want to create a binary file for an OS or architecture other than the one you are working with now, then call <code>packr</code> like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># Example for GNU/Linux, x64 bit</span>
+GOOS=linux GOARCH=amd64 packr build ./main.go</code></pre></div>
+<h3 id="zserge-webview">zserge/webview</h3>
+
+<p>A tiny cross-platform web-browsing package used to create modern graphical interfaces.</p>
+
+<blockquote>
+<p>Please note that the article describes how to work with the version <code>0.1.0</code>.</p>
+</blockquote>
+
+<p>The file <code>./main.go</code> contains:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;github.com/zserge/webview&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#75715e">// Open the Google homepage in a window with a size of 1024x768 px,
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// without resizing the window
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">webview</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#e6db74">&#34;Google&#34;</span>, <span style="color:#e6db74">&#34;https://google.com&#34;</span>, <span style="color:#ae81ff">1024</span>, <span style="color:#ae81ff">768</span>, <span style="color:#66d9ef">false</span>)
+}</code></pre></div>
+<p>To create a macOS application, go to the console and execute:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># Creating directory structure of a macOS app</span>
+mkdir -p example.app/Contents/MacOS
+
+<span style="color:#75715e"># Compile ./main.go to app folder</span>
+go build -o example.app/Contents/MacOS/example
+
+<span style="color:#75715e"># Run app</span>
+open example.app</code></pre></div>
+<h2 id="structure-of-macos-application">Structure of macOS application</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">tree .
+
+├── vendor
+├── ui
+│   ├── build
+│   ├── node_modules
+│   ├── public
+│   ├── src
+│   ├── package-lock.json
+│   └── package.json
+├── helloworld.app
+├── Gopkg.lock
+├── Gopkg.toml
+└── main.go</code></pre></div>
+<h3 id="description-of-main-files-and-folders">Description of main files and folders</h3>
+
+<ul>
+<li><code>vendor</code> — all packages installed using <code>dep</code> will be stored here;</li>
+<li><code>ui</code> — folder with React.js application (frontend);
+
+<ul>
+<li><code>build</code> — folder with production-version of React-app after the build;</li>
+<li><code>src</code> — folder with the source code of the React-app;</li>
+<li><code>package.json</code> — dependency file <code>npm</code>;</li>
+</ul></li>
+<li><code>helloworld.app</code> — macOS application (specially prepared folder);</li>
+<li><code>Gopkg.toml</code> — dependency file <code>dep</code>;</li>
+<li><code>main.go</code> — Golang application source code (backend);</li>
+</ul>
+
+<h2 id="write-the-code">Write the code</h2>
+
+<p>Enough theory. As he said, without exaggeration, one of the great programmers of our time, Linus Torvalds:</p>
+
+<blockquote>
+<p>Talk is cheap. Show me the code.</p>
+
+<p>— Linus Torvalds</p>
+</blockquote>
+
+<p>Let&rsquo;s follow this advice and write some code.</p>
+
+<p>I will not analyze each line of code separately, as I consider it redundant and counter-productive. All code listings are provided with detailed comments.</p>
+
+<h3 id="memo-for-beginners-copy-paste-developers">Memo for beginners/copy-paste developers</h3>
+
+<p>Great, when there is a full code listing at the end of the article, right? You can immediately, without reading the text, copy all the program code and see its execution &hellip;</p>
+
+<p>At this point, I would like to appeal to all readers who do not want to spend time on theory:</p>
+
+<blockquote>
+<p>Do not mindlessly copy code from the Internet! This will not help you (in understanding the code and subject of the article), nor the author (in explaining/helping in the comments).</p>
+</blockquote>
+
+<h3 id="frontend-for-application">Frontend for application</h3>
+
+<p>React.js is a powerful, but at the same time, easy-to-learn JavaScript-library for creating user interfaces, which is perfect for us to implement the frontend part of the application.</p>
+
+<blockquote>
+<p>For this article, we <strong>will not</strong> use anything but the standard “It works!” React.js page.</p>
+</blockquote>
+
+<p>Like everything in modern frontend, we start with the installation of React.js and all the necessary auxiliary libraries.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># Create a folder for app and go into it</span>
+mkdir ~/helloworld_project &amp;&amp; cd ~/helloworld_project
+
+<span style="color:#75715e"># According to the structure of finished app,</span>
+<span style="color:#75715e"># install React.js in ./ui directory</span>
+npx create-react-app ui
+
+<span style="color:#75715e"># Go to folder and check that everything works</span>
+cd ui &amp;&amp; npm start &amp;&amp; open http<span style="color:#960050;background-color:#1e0010">:</span>//localhost<span style="color:#960050;background-color:#1e0010">:</span>3000
+
+<span style="color:#75715e"># Next, stop dev server (press Ctrl+C)</span>
+<span style="color:#75715e"># and install axios library</span>
+npm i --save axios</code></pre></div>
+<h4 id="code-listing-for-ui-src-app-js-file">Code listing for ./ui/src/App.js file</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#75715e">// Импортируем React и методы хуков
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span>, { <span style="color:#a6e22e">useState</span>, <span style="color:#a6e22e">useEffect</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+
+<span style="color:#75715e">// Импортируем библиотеку axios
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;axios&#34;</span>;
+
+<span style="color:#75715e">// Импортируем логотип и CSS
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">logo</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./logo.svg&#34;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;./App.css&#34;</span>;
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">App</span>() {
+  <span style="color:#75715e">// Определяем хранилище для полученных данных
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">setState</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>([]);
+
+  <span style="color:#75715e">// Retrieving data from an AJAX request.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// Remember that the function passed to useEffect will run,
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// after render is fixed on the screen.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// See https://reactjs.org/docs/hooks-reference.html#useeffect
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">useEffect</span>(() =&gt; {
+    <span style="color:#a6e22e">axios</span>
+      .<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;/hello&#34;</span>) <span style="color:#75715e">// GET request to URL /hello
+</span><span style="color:#75715e"></span>      .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">resp</span> =&gt; <span style="color:#a6e22e">setState</span>(<span style="color:#a6e22e">resp</span>.<span style="color:#a6e22e">data</span>)) <span style="color:#75715e">// save response to state
+</span><span style="color:#75715e"></span>      .<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">err</span> =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">err</span>)); <span style="color:#75715e">// catch error
+</span><span style="color:#75715e"></span>  });
+
+  <span style="color:#66d9ef">return</span> (
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App&#34;</span>&gt;
+      &lt;<span style="color:#f92672">header</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App-header&#34;</span>&gt;
+        &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">{logo}</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App-logo&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logo&#34;</span> /&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">Hello</span>, {<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">text</span>}<span style="color:#f92672">!</span>&lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">a</span>
+          <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App-link&#34;</span>
+          <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://reactjs.org&#34;</span>
+          <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_blank&#34;</span>
+          <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;noopener noreferrer&#34;</span>
+        &gt;
+          <span style="color:#a6e22e">Learn</span> <span style="color:#a6e22e">React</span>
+        &lt;/<span style="color:#f92672">a</span>&gt;
+      &lt;/<span style="color:#f92672">header</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  );
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">App</span>;</code></pre></div>
+<p>That&rsquo;s all, the frontend for the application is ready! 👌</p>
+
+<h3 id="application-backend">Application Backend</h3>
+
+<p>Install the necessary packages:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">dep ensure -add github.com/gobuffalo/packr
+dep ensure -add github.com/zserge/webview</code></pre></div>
+<p>Also, we need the <code>packr</code> utility, which should be available for calling from the console in <code>$GOPATH/bin/packr</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">go get -u github.com/gobuffalo/packr/packr</code></pre></div>
+<h4 id="code-listing-for-main-go-file">Code listing for ./main.go file</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;encoding/json&#34;</span>
+	<span style="color:#e6db74">&#34;net/http&#34;</span>
+
+	<span style="color:#e6db74">&#34;github.com/gobuffalo/packr&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/zserge/webview&#34;</span>
+)
+
+<span style="color:#75715e">// Message : struct for message
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Message</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">Text</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`json:&#34;text&#34;`</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#75715e">// Bind folder path for packaging with Packr
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">folder</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">packr</span>.<span style="color:#a6e22e">NewBox</span>(<span style="color:#e6db74">&#34;./ui/build&#34;</span>)
+
+	<span style="color:#75715e">// Handle to ./static/build folder on root path
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Handle</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">FileServer</span>(<span style="color:#a6e22e">folder</span>))
+
+	<span style="color:#75715e">// Handle to showMessage func on /hello path
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandleFunc</span>(<span style="color:#e6db74">&#34;/hello&#34;</span>, <span style="color:#a6e22e">showMessage</span>)
+
+	<span style="color:#75715e">// Run server at port 8000 as goroutine
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// for non-block working
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ListenAndServe</span>(<span style="color:#e6db74">&#34;:8000&#34;</span>, <span style="color:#66d9ef">nil</span>)
+
+	<span style="color:#75715e">// Let&#39;s open window app with:
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//  - name: Golang App
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//  - address: http://localhost:8000
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//  - sizes: 800x600 px
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//  - resizable: true
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">webview</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#e6db74">&#34;Golang App&#34;</span>, <span style="color:#e6db74">&#34;http://localhost:8000&#34;</span>, <span style="color:#ae81ff">800</span>, <span style="color:#ae81ff">600</span>, <span style="color:#66d9ef">true</span>)
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">showMessage</span>(<span style="color:#a6e22e">w</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ResponseWriter</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Request</span>) {
+	<span style="color:#75715e">// Create Message JSON data
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">message</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Message</span>{<span style="color:#e6db74">&#34;World&#34;</span>}
+
+	<span style="color:#75715e">// Return JSON encoding to output
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">output</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">message</span>)
+
+	<span style="color:#75715e">// Catch error, if it happens
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Error</span>(<span style="color:#a6e22e">w</span>, <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">Error</span>(), <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusInternalServerError</span>)
+		<span style="color:#66d9ef">return</span>
+	}
+
+	<span style="color:#75715e">// Set header Content-Type
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">Header</span>().<span style="color:#a6e22e">Set</span>(<span style="color:#e6db74">&#34;Content-Type&#34;</span>, <span style="color:#e6db74">&#34;application/json&#34;</span>)
+
+	<span style="color:#75715e">// Write output
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">Write</span>(<span style="color:#a6e22e">output</span>)
+}</code></pre></div>
+<h2 id="build-the-application">Build the application</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># Creating the directory structure of macOS app</span>
+mkdir -p helloworld.app/Contents/MacOS
+
+<span style="color:#75715e"># Compile ./main.go to app folder</span>
+go build -o example.app/Contents/MacOS/helloworld
+
+<span style="color:#75715e"># Run application</span>
+open helloworld.app</code></pre></div>
+<p><img src="https://user-images.githubusercontent.com/11155743/59463057-bd2c9980-8e2d-11e9-84f1-7ad1aac6f98c.gif" alt="gif result" /></p>
+
+<h2 id="cross-compilation-for-windows-and-gnu-linux">Cross compilation for Windows and GNU/Linux</h2>
+
+<p>The theoretical block and the code given in the article are relevant for developing similar applications for other operating systems. In this case, the code remains unchanged.</p>
+
+<blockquote>
+<p>Write the code once — run everywhere!</p>
+</blockquote>
+
+<p>This is made possible by the cross-system nature. You can compile the executable file.</p>
+
+<ul>
+<li>GNU/Linux — executable binary file;</li>
+<li>Microsoft Windows — executable file <code>.exe</code>;</li>
+<li>Apple macOS — a binary file located inside the <code>.app</code> structure;</li>
+</ul>
+
+<p>We will look at this in the following articles.</p>
+
+<p>Stay tuned, comment and write only good code!</p>
+
+<h2 id="securing-material">Securing material</h2>
+
+<p>You are at the end of the article. Now you know a lot more than 15 minutes ago. Take my congratulations! 🎉</p>
+
+<p>Separate 10-15 minutes and the read text restored in memory and the studied code from articles. Next, try to answer the questions and do the exercises in order to better consolidate the material.</p>
+
+<blockquote>
+<p>Yes, you can pry, but only if you could not remember.</p>
+</blockquote>
+
+<h3 id="questions">Questions</h3>
+
+<ol>
+<li>What is the function of the standard go package <code>net/http</code> used to mount folders to the specified address (route)?</li>
+<li>What does the <code>Marshal</code> function do from the standard Go package <code>encoding/json</code>?</li>
+<li>What parameters need to be changed in the source code of the Full HD application?</li>
+<li>If you want to start a web server without goroutine?</li>
+<li>What is the command <code>packr build ./main.go</code>?</li>
+</ol>
+
+<h3 id="exercises">Exercises</h3>
+
+<ul>
+<li>Rewrite the code of the AJAX request (in the frontend application) without using the <code>axios</code> library. <em>Hint: use the features</em> <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank"><em>Fetch API</em></a>.</li>
+<li>Add more JSON data to the frontend output in the <code>showMessage</code> function. <em>Example: add a new attribute <code>Emoji</code> to the<code>Message</code> structure and output it (with your favorite smiley) after the <code>Text</code></em> attribute.</li>
+<li>Try to improve the appearance of your application, for example, using the Material UI visual component library (<a href="https://github.com/mui-org/material-ui" target="_blank">GitHub</a>).</li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://truewebartisans.com/tags/howto">howto</a></span><span class="tag"><a href="https://truewebartisans.com/tags/golang">golang</a></span><span class="tag"><a href="https://truewebartisans.com/tags/reactjs">reactjs</a></span><span class="tag"><a href="https://truewebartisans.com/tags/macos">macos</a></span><span class="tag"><a href="https://truewebartisans.com/tags/native-app">native app</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1643 Words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>Thu, 30 May 2019, 23:10 MSK</p>
+        </div>
+
+        
+            <hr/>
+
+            <div id="comments" class="thin"><div id="disqus_thread"></div>
+
+<script type="text/javascript">
+    (function() {
+        
+        
+        if (window.location.hostname == "localhost") return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = '1wa';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2016-2019</span>
+            
+                <span>Made with &hearts; by <a href="https://truewebartisans.com">Vic Shóstak</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a></span>
+            <span> <a href="https://truewebartisans.com/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            All images on this page and True web artisans logo is the intellectual property of Vic Shóstak and can not be used under Creative Commons license.
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://truewebartisans.com/bundle.min.9e52e68b082cf2a30a7fead88260edb8818fbd7f7831e39674917d4539ec75df41ba88eaddfbd916594ab4fb2a31913b46cf2d6094cf80381edb8c632512a8ca.js" integrity="sha512-nlLmiwgs8qMKf&#43;rYgmDtuIGPvX94MeOWdJF9RTnsdd9Buojq3fvZFllKtPsqMZE7Rs8tYJTPgDge24xjJRKoyg=="></script>
+
+
+
+    </body>
+</html>
