@@ -38,14 +38,13 @@ Objectives of the article  Show one of the easiest ways to create a native deskt
 <link rel="manifest" href="https://truewebartisans.com/site.webmanifest">
 <link rel="mask-icon" href="https://truewebartisans.com/safari-pinned-tab.svg" color="#252627">
 <link rel="shortcut icon" href="https://truewebartisans.com/favicon.ico">
-<meta name="theme-color" content="#252627">
-<meta itemprop="name" content="Creating a native macOS app on Golang and React.js with full code protection (without magic)">
+<meta name="theme-color" content="#252627"><meta itemprop="name" content="Creating a native macOS app on Golang and React.js with full code protection (without magic)">
 <meta itemprop="description" content="Creating a native macOS app on Golang and React.js with full code protection (without magic)">
 
 
 <meta itemprop="datePublished" content="2019-05-30T23:10:00&#43;03:00" />
 <meta itemprop="dateModified" content="2019-05-30T23:10:00&#43;03:00" />
-<meta itemprop="wordCount" content="1643">
+<meta itemprop="wordCount" content="1641">
 
 
 
@@ -410,18 +409,18 @@ cd ui &amp;&amp; npm start &amp;&amp; open http<span style="color:#960050;backgr
 <span style="color:#75715e"># and install axios library</span>
 npm i --save axios</code></pre></div>
 <h4 id="code-listing-for-ui-src-app-js-file">Code listing for ./ui/src/App.js file</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#75715e">// Импортируем React и методы хуков
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#75715e">// Import React and React Hooks
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span>, { <span style="color:#a6e22e">useState</span>, <span style="color:#a6e22e">useEffect</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
 
-<span style="color:#75715e">// Импортируем библиотеку axios
+<span style="color:#75715e">// Import axios
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;axios&#34;</span>;
 
-<span style="color:#75715e">// Импортируем логотип и CSS
+<span style="color:#75715e">// Import logo and CSS
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">logo</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./logo.svg&#34;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;./App.css&#34;</span>;
 
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">App</span>() {
-  <span style="color:#75715e">// Определяем хранилище для полученных данных
+  <span style="color:#75715e">// Define storage for data
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">setState</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>([]);
 
   <span style="color:#75715e">// Retrieving data from an AJAX request.
@@ -438,7 +437,7 @@ npm i --save axios</code></pre></div>
   <span style="color:#66d9ef">return</span> (
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App&#34;</span>&gt;
       &lt;<span style="color:#f92672">header</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App-header&#34;</span>&gt;
-        &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">{logo}</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App-logo&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logo&#34;</span> /&gt;
+        &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">logo</span>} <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App-logo&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logo&#34;</span> /&gt;
         &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">Hello</span>, {<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">text</span>}<span style="color:#f92672">!</span>&lt;/<span style="color:#f92672">p</span>&gt;
         &lt;<span style="color:#f92672">a</span>
           <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App-link&#34;</span>
@@ -589,7 +588,7 @@ open helloworld.app</code></pre></div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://truewebartisans.com/tags/howto">howto</a></span><span class="tag"><a href="https://truewebartisans.com/tags/golang">golang</a></span><span class="tag"><a href="https://truewebartisans.com/tags/reactjs">reactjs</a></span><span class="tag"><a href="https://truewebartisans.com/tags/macos">macos</a></span><span class="tag"><a href="https://truewebartisans.com/tags/native-app">native app</a></span>
                 </p>
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1643 Words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1641 Words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>Thu, 30 May 2019, 23:10 MSK</p>
         </div>
@@ -645,7 +644,7 @@ open helloworld.app</code></pre></div>
 
 
 
-<script type="text/javascript" src="https://truewebartisans.com/bundle.min.9e52e68b082cf2a30a7fead88260edb8818fbd7f7831e39674917d4539ec75df41ba88eaddfbd916594ab4fb2a31913b46cf2d6094cf80381edb8c632512a8ca.js" integrity="sha512-nlLmiwgs8qMKf&#43;rYgmDtuIGPvX94MeOWdJF9RTnsdd9Buojq3fvZFllKtPsqMZE7Rs8tYJTPgDge24xjJRKoyg=="></script>
+<script type="text/javascript" src="https://truewebartisans.com/bundle.min.4c3fb12a087ceed4a52cb5d57068a9795c7069617a01ca70f788052ad66e1791779e6c72686e1dc0ca13dc03b0203204b6566bb0dd1ee80de2b7ff4d8fe53db2.js" integrity="sha512-TD&#43;xKgh87tSlLLXVcGipeVxwaWF6Acpw94gFKtZuF5F3nmxyaG4dwMoT3AOwIDIEtlZrsN0e6A3it/9Nj&#43;U9sg=="></script>
 
 
 

@@ -266,7 +266,7 @@ npm i --save axios</code></pre></div>
   <span style="color:#66d9ef">return</span> (
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App&#34;</span>&gt;
       &lt;<span style="color:#f92672">header</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App-header&#34;</span>&gt;
-        &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">{logo}</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App-logo&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logo&#34;</span> /&gt;
+        &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">logo</span>} <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App-logo&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logo&#34;</span> /&gt;
         &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">Hello</span>, {<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">text</span>}<span style="color:#f92672">!</span>&lt;/<span style="color:#f92672">p</span>&gt;
         &lt;<span style="color:#f92672">a</span>
           <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App-link&#34;</span>

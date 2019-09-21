@@ -18,57 +18,8 @@
   </url>
   
   <url>
-    <loc>https://truewebartisans.com/posts/</loc>
-    <lastmod>2019-05-30T23:10:00+03:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="https://truewebartisans.com/ru/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://truewebartisans.com/posts/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://truewebartisans.com/tags/</loc>
-    <lastmod>2019-05-30T23:10:00+03:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="https://truewebartisans.com/ru/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://truewebartisans.com/tags/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://truewebartisans.com/</loc>
-    <lastmod>2019-05-30T23:10:00+03:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="https://truewebartisans.com/ru/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://truewebartisans.com/"
-                />
-  </url>
-  
-  <url>
     <loc>https://truewebartisans.com/tags/golang/</loc>
     <lastmod>2019-05-30T23:10:00+03:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
@@ -84,7 +35,6 @@
   <url>
     <loc>https://truewebartisans.com/tags/howto/</loc>
     <lastmod>2019-05-30T23:10:00+03:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
@@ -100,7 +50,6 @@
   <url>
     <loc>https://truewebartisans.com/tags/macos/</loc>
     <lastmod>2019-05-30T23:10:00+03:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
@@ -116,7 +65,6 @@
   <url>
     <loc>https://truewebartisans.com/tags/native-app/</loc>
     <lastmod>2019-05-30T23:10:00+03:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
@@ -130,9 +78,23 @@
   </url>
   
   <url>
+    <loc>https://truewebartisans.com/posts/</loc>
+    <lastmod>2019-05-30T23:10:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://truewebartisans.com/ru/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://truewebartisans.com/posts/"
+                />
+  </url>
+  
+  <url>
     <loc>https://truewebartisans.com/tags/reactjs/</loc>
     <lastmod>2019-05-30T23:10:00+03:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
@@ -146,12 +108,41 @@
   </url>
   
   <url>
+    <loc>https://truewebartisans.com/tags/</loc>
+    <lastmod>2019-05-30T23:10:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://truewebartisans.com/ru/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://truewebartisans.com/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://truewebartisans.com/</loc>
+    <lastmod>2019-05-30T23:10:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://truewebartisans.com/ru/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://truewebartisans.com/"
+                />
+  </url>
+  
+  <url>
     <loc>https://truewebartisans.com/about/</loc>
   </url>
   
   <url>
     <loc>https://truewebartisans.com/categories/</loc>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"

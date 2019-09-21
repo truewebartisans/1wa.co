@@ -248,18 +248,18 @@ npm i --save axios
 #### Code listing for ./ui/src/App.js file
 
 ```jsx
-// Импортируем React и методы хуков
+// Import React and React Hooks
 import React, { useState, useEffect } from "react";
 
-// Импортируем библиотеку axios
+// Import axios
 import axios from "axios";
 
-// Импортируем логотип и CSS
+// Import logo and CSS
 import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  // Определяем хранилище для полученных данных
+  // Define storage for data
   const [state, setState] = useState([]);
 
   // Retrieving data from an AJAX request.
