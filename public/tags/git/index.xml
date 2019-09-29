@@ -17,9 +17,11 @@
       <pubDate>Mon, 16 Sep 2019 20:10:00 +0300</pubDate>
       
       <guid>https://truewebartisans.com/posts/2019/09/how-to-git-clone-private-repository/</guid>
-      <description>Introduction Welcome! This is another article in the “How to” series. This time, we will analyze the creation of a native desktop application for macOS, write a little code on Golang and React.js, which will have copy protection.
+      <description>Introduction Welcome! This is another article in the “How to” series.
 This time, we will try to do without magic!
-Objectives of the article  Show one of the easiest ways to create a native desktop application for macOS on Golang; Show the option to protect the code of your application from being modified by third parties (for example, during commercial distribution);  Securing material You are at the end of the article.</description>
+Objectives of the article  Show one of the easiest ways to clone your private GitHub repository; Train your console skills;  Let&amp;rsquo;s clone it! First, generate SSH key on your VDS:
+sudo ssh-keygen  Choose any name if you want, I use default name of key: rsa_key.
+ Next step, create SSH config:</description>
     </item>
     
   </channel>
