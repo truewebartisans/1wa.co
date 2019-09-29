@@ -35,6 +35,8 @@ disableSitemap = false
 disable404     = false
 disableHugoGeneratorInject = false
 
+GoogleAnalytics  = "53504989"
+
 [permalinks]
   posts = "/posts/:year/:month/:slug/"
 
