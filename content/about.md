@@ -9,6 +9,7 @@ The web development team with extensive experience in UX, design, programming, c
 We provide our experience for complex service and business communication solutions:
 
 - Progressive web applications (PWA)
+- UX and Customer Journey Maps
 - Modern websites (API-based SPA)
 - Chatbots (Facebook Messenger, Telegram, Viber, VK)
 
