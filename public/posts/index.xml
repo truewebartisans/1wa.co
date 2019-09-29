@@ -5,8 +5,62 @@
         <description>Recent content in Posts on True web artisans</description>
         <generator>Hugo -- gohugo.io</generator>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC-ND 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Thu, 30 May 2019 23:10:00 +0300</lastBuildDate>
+        <lastBuildDate>Mon, 16 Sep 2019 20:10:00 +0300</lastBuildDate>
         <atom:link href="https://truewebartisans.com/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>How to make git clone for my private repository on GitHub?</title>
+            <link>https://truewebartisans.com/posts/2019/09/how-to-git-clone-private-repository/</link>
+            <pubDate>Mon, 16 Sep 2019 20:10:00 +0300</pubDate>
+            
+            <guid>https://truewebartisans.com/posts/2019/09/how-to-git-clone-private-repository/</guid>
+            <description>Introduction Welcome! This is another article in the “How to” series. This time, we will analyze the creation of a native desktop application for macOS, write a little code on Golang and React.js, which will have copy protection.
+This time, we will try to do without magic!
+Objectives of the article  Show one of the easiest ways to create a native desktop application for macOS on Golang; Show the option to protect the code of your application from being modified by third parties (for example, during commercial distribution);  Securing material You are at the end of the article.</description>
+            <content type="html"><![CDATA[
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Welcome! This is another article in the “How to” series. This time, we will analyze the creation of a native desktop application for macOS, write a little code on Golang and React.js, which will have copy protection.</p>
+
+<p>This time, we will try to do without magic!</p>
+
+<h3 id="objectives-of-the-article">Objectives of the article</h3>
+
+<ol>
+<li>Show one of the easiest ways to create a native desktop application for macOS on Golang;</li>
+<li>Show the option to protect the code of your application from being modified by third parties (for example, during commercial distribution);</li>
+</ol>
+
+<h2 id="securing-material">Securing material</h2>
+
+<p>You are at the end of the article. Now you know a lot more than 15 minutes ago. Take my congratulations! 🎉</p>
+
+<p>Separate 10-15 minutes and the read text restored in memory and the studied code from articles. Next, try to answer the questions and do the exercises in order to better consolidate the material.</p>
+
+<blockquote>
+<p>Yes, you can pry, but only if you could not remember.</p>
+</blockquote>
+
+<h3 id="questions">Questions</h3>
+
+<ol>
+<li>What is the function of the standard go package <code>net/http</code> used to mount folders to the specified address (route)?</li>
+<li>What does the <code>Marshal</code> function do from the standard Go package <code>encoding/json</code>?</li>
+<li>What parameters need to be changed in the source code of the Full HD application?</li>
+<li>If you want to start a web server without goroutine?</li>
+<li>What is the command <code>packr build ./main.go</code>?</li>
+</ol>
+
+<h3 id="exercises">Exercises</h3>
+
+<ul>
+<li>Rewrite the code of the AJAX request (in the frontend application) without using the <code>axios</code> library. <em>Hint: use the features</em> <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank"><em>Fetch API</em></a>.</li>
+<li>Add more JSON data to the frontend output in the <code>showMessage</code> function. <em>Example: add a new attribute <code>Emoji</code> to the<code>Message</code> structure and output it (with your favorite smiley) after the <code>Text</code></em> attribute.</li>
+<li>Try to improve the appearance of your application, for example, using the Material UI visual component library (<a href="https://github.com/mui-org/material-ui" target="_blank">GitHub</a>).</li>
+</ul>
+]]></content>
+        </item>
         
         <item>
             <title>Creating a native macOS app on Golang and React.js with full code protection (without magic)</title>

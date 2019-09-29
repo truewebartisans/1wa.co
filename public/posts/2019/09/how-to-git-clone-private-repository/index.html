@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="Vic Shóstak ">
+<meta name="description"
+    content="Introduction Welcome! This is another article in the “How to” series. This time, we will analyze the creation of a native desktop application for macOS, write a little code on Golang and React.js, which will have copy protection.
+This time, we will try to do without magic!
+Objectives of the article  Show one of the easiest ways to create a native desktop application for macOS on Golang; Show the option to protect the code of your application from being modified by third parties (for example, during commercial distribution);  Securing material You are at the end of the article." />
+<meta name="keywords" content="web development team, web dev team, online business improve, web development, development team, online business" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://truewebartisans.com/posts/2019/09/how-to-git-clone-private-repository/" />
+
+
+<title>
+    
+    How to make git clone for my private repository on GitHub? | True web artisans  → The web development team, which always thinks about your online business
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://truewebartisans.com/main.min.1939c2f4e3bfdb6dae14d7a00fd0f65b5430a353abe891847dc375d8b18f09ab.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://truewebartisans.com/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://truewebartisans.com/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://truewebartisans.com/favicon-16x16.png">
+<link rel="manifest" href="https://truewebartisans.com/site.webmanifest">
+<link rel="mask-icon" href="https://truewebartisans.com/safari-pinned-tab.svg" color="#252627">
+<link rel="shortcut icon" href="https://truewebartisans.com/favicon.ico">
+<meta name="theme-color" content="#252627"><meta itemprop="name" content="How to make git clone for my private repository on GitHub?">
+<meta itemprop="description" content="Introduction Welcome! This is another article in the “How to” series. This time, we will analyze the creation of a native desktop application for macOS, write a little code on Golang and React.js, which will have copy protection.
+This time, we will try to do without magic!
+Objectives of the article  Show one of the easiest ways to create a native desktop application for macOS on Golang; Show the option to protect the code of your application from being modified by third parties (for example, during commercial distribution);  Securing material You are at the end of the article.">
+
+
+<meta itemprop="datePublished" content="2019-09-16T20:10:00&#43;03:00" />
+<meta itemprop="dateModified" content="2019-09-16T20:10:00&#43;03:00" />
+<meta itemprop="wordCount" content="293">
+
+
+
+<meta itemprop="keywords" content="howto,VDS,git,private,repository,GitHub," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://truewebartisans.com"/>
+
+<meta name="twitter:title" content="How to make git clone for my private repository on GitHub?"/>
+<meta name="twitter:description" content="Introduction Welcome! This is another article in the “How to” series. This time, we will analyze the creation of a native desktop application for macOS, write a little code on Golang and React.js, which will have copy protection.
+This time, we will try to do without magic!
+Objectives of the article  Show one of the easiest ways to create a native desktop application for macOS on Golang; Show the option to protect the code of your application from being modified by third parties (for example, during commercial distribution);  Securing material You are at the end of the article."/>
+
+
+
+
+<meta property="article:published_time" content="2019-09-16 20:10:00 &#43;0300 MSK" />
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://truewebartisans.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <img src="https://truewebartisans.com/images/webartisans-logo-full-white.svg" alt="true web artisans logo" />
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://truewebartisans.com/about/">About</a></li><li><a href="https://truewebartisans.com/posts/">Posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>2 minutes
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h1 class="post-title"><a href="https://truewebartisans.com/posts/2019/09/how-to-git-clone-private-repository/">How to make git clone for my private repository on GitHub?</a></h1>
+            
+            <hr/>
+                <aside id="toc">
+                    <h2 class="toc-title">Table of Contents</h2>
+                    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#objectives-of-the-article">Objectives of the article</a></li>
+</ul></li>
+<li><a href="#securing-material">Securing material</a>
+<ul>
+<li><a href="#questions">Questions</a></li>
+<li><a href="#exercises">Exercises</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+                </aside>
+
+                <hr/>
+
+            
+
+            <div class="post-content">
+                
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Welcome! This is another article in the “How to” series. This time, we will analyze the creation of a native desktop application for macOS, write a little code on Golang and React.js, which will have copy protection.</p>
+
+<p>This time, we will try to do without magic!</p>
+
+<h3 id="objectives-of-the-article">Objectives of the article</h3>
+
+<ol>
+<li>Show one of the easiest ways to create a native desktop application for macOS on Golang;</li>
+<li>Show the option to protect the code of your application from being modified by third parties (for example, during commercial distribution);</li>
+</ol>
+
+<h2 id="securing-material">Securing material</h2>
+
+<p>You are at the end of the article. Now you know a lot more than 15 minutes ago. Take my congratulations! 🎉</p>
+
+<p>Separate 10-15 minutes and the read text restored in memory and the studied code from articles. Next, try to answer the questions and do the exercises in order to better consolidate the material.</p>
+
+<blockquote>
+<p>Yes, you can pry, but only if you could not remember.</p>
+</blockquote>
+
+<h3 id="questions">Questions</h3>
+
+<ol>
+<li>What is the function of the standard go package <code>net/http</code> used to mount folders to the specified address (route)?</li>
+<li>What does the <code>Marshal</code> function do from the standard Go package <code>encoding/json</code>?</li>
+<li>What parameters need to be changed in the source code of the Full HD application?</li>
+<li>If you want to start a web server without goroutine?</li>
+<li>What is the command <code>packr build ./main.go</code>?</li>
+</ol>
+
+<h3 id="exercises">Exercises</h3>
+
+<ul>
+<li>Rewrite the code of the AJAX request (in the frontend application) without using the <code>axios</code> library. <em>Hint: use the features</em> <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank"><em>Fetch API</em></a>.</li>
+<li>Add more JSON data to the frontend output in the <code>showMessage</code> function. <em>Example: add a new attribute <code>Emoji</code> to the<code>Message</code> structure and output it (with your favorite smiley) after the <code>Text</code></em> attribute.</li>
+<li>Try to improve the appearance of your application, for example, using the Material UI visual component library (<a href="https://github.com/mui-org/material-ui" target="_blank">GitHub</a>).</li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://truewebartisans.com/tags/howto">howto</a></span><span class="tag"><a href="https://truewebartisans.com/tags/vds">VDS</a></span><span class="tag"><a href="https://truewebartisans.com/tags/git">git</a></span><span class="tag"><a href="https://truewebartisans.com/tags/private">private</a></span><span class="tag"><a href="https://truewebartisans.com/tags/repository">repository</a></span><span class="tag"><a href="https://truewebartisans.com/tags/github">GitHub</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>293 Words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>Mon, 16 Sep 2019, 20:10 MSK</p>
+        </div>
+
+        
+            <div class="pagination">
+                <div class="pagination__title">
+                    <span class="pagination__title-h"></span>
+                    <hr />
+                </div>
+
+                <div class="pagination__buttons">
+                    
+
+                    
+                        <span class="button next">
+                            <a href="https://truewebartisans.com/posts/2019/05/native-macos-app-on-golang-and-react/">
+                                <span class="button__text">Creating a native macOS app on Golang and React.js with full code protection (without magic)</span>
+                                <span class="button__icon">→</span>
+                            </a>
+                        </span>
+                    
+                </div>
+            </div>
+        
+            <hr/>
+
+            <div id="comments" class="thin"><div id="disqus_thread"></div>
+
+<script type="text/javascript">
+    (function() {
+        
+        
+        if (window.location.hostname == "localhost") return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = '1wa';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2016-2019</span>
+            
+                <span>Made with &hearts; by <a href="https://truewebartisans.com">Vic Shóstak</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a></span>
+            <span> <a href="https://truewebartisans.com/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            All images on this page and True web artisans logo is the intellectual property of Vic Shóstak and can not be used under Creative Commons license.
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://truewebartisans.com/bundle.min.4c3fb12a087ceed4a52cb5d57068a9795c7069617a01ca70f788052ad66e1791779e6c72686e1dc0ca13dc03b0203204b6566bb0dd1ee80de2b7ff4d8fe53db2.js" integrity="sha512-TD&#43;xKgh87tSlLLXVcGipeVxwaWF6Acpw94gFKtZuF5F3nmxyaG4dwMoT3AOwIDIEtlZrsN0e6A3it/9Nj&#43;U9sg=="></script>
+    
+    <script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym("53504989", "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+    });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/53504989" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    
+
+
+
+    </body>
+</html>
