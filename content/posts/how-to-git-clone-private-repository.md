@@ -99,7 +99,7 @@ You may git clone your private repository on VDS:
 sudo git clone my_project:<user>/<repo>.git
 ```
 
-### How to update?
+## How to update?
 
 For update code from your repository, type into project directory:
 
@@ -110,4 +110,5 @@ git pull
 ### Questions
 
 1. What's console command may generate SSH key?
-2. What does the `cat` attribute on console?
+2. What does the `cat` command on console?
+3. What happens, if you run command on console without `sudo`?

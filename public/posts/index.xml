@@ -86,7 +86,7 @@ The key&#39;s randomart image is:
 
 <p>You may git clone your private repository on VDS:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-console" data-lang="console">sudo git clone my_project:&lt;user&gt;/&lt;repo&gt;.git</code></pre></div>
-<h3 id="how-to-update">How to update?</h3>
+<h2 id="how-to-update">How to update?</h2>
 
 <p>For update code from your repository, type into project directory:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-console" data-lang="console">git pull</code></pre></div>
@@ -94,7 +94,8 @@ The key&#39;s randomart image is:
 
 <ol>
 <li>What&rsquo;s console command may generate SSH key?</li>
-<li>What does the <code>cat</code> attribute on console?</li>
+<li>What does the <code>cat</code> command on console?</li>
+<li>What happens, if you run command on console without <code>sudo</code>?</li>
 </ol>
 ]]></content>
         </item>
