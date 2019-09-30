@@ -21,16 +21,14 @@ series:
 
 ## Introduction
 
-Welcome! This is another article in the “How to” series.
-
-This time, we will try to do without magic!
+Welcome! The “How to” series continue. Today, we busted huge problem with GitHub: clone private repository to VDS.
 
 ### Objectives of the article
 
 1. Show one of the easiest ways to clone your private GitHub repository;
 2. Train your console skills;
 
-## Let's clone it!
+## Prepare setup
 
 First, generate SSH key on your VDS:
 
@@ -38,7 +36,35 @@ First, generate SSH key on your VDS:
 sudo ssh-keygen
 ```
 
-> Choose any name if you want, I use default name of key: `rsa_key`.
+> Choose any name, if you want. I use default name `id_rsa` and dir `~/.ssh`.
+
+```console
+Generating public/private rsa key pair.
+
+Enter file in which to save the key (~/.ssh/id_rsa): <file name>
+
+Enter passphrase (empty for no passphrase): <password>
+Enter same passphrase again: <password again>
+
+Your identification has been saved in ~/.ssh/id_rsa.
+Your public key has been saved in ~/.ssh/id_rsa.pub.
+
+The key fingerprint is:
+SHA256:Hs516tDZPzK0b+/cQhNiyWZUJwnaeDqOShMBBQidhBX user@vds.local
+
+The key's randomart image is:
++---[RSA 2048]----+
+|.o.o  **E=       |
+|=*ooo..          |
+|  o.+ .          |
+|   = .           |
+|  o   . S      ..|
+|     o..o .......|
+|    ..** o....o. |
+|      oo   o+o==.|
+|     .o.+.   . o=|
++----[SHA256]-----+
+```
 
 Next step, create SSH config:
 
@@ -48,7 +74,7 @@ sudo cat >~/.ssh/config <<EOL
 Host my_project
 Hostname github.com
 User git
-IdentityFile ~/.ssh/rsa_key
+IdentityFile ~/.ssh/id_rsa
 
 EOL
 ```
@@ -59,11 +85,21 @@ And now, copy public key to clipboard:
 sudo cat ~/.ssh/rsa_key.pub
 ```
 
-Go to your GitHub repository settings. Add copied public key to `Deploy Keys` section. That's it! You may git clone your private repository on VDS:
+Go to your GitHub repository settings. Add copied public key to `Deploy Keys` section.
+
+![GitHub Deploy Keys section](https://user-images.githubusercontent.com/11155743/65852734-bdf72600-e35f-11e9-900d-d8ca0f58b29e.png)
+
+> Don't forget check `Allow write access`. That's it!
+
+## Let's clone it!
+
+You may git clone your private repository on VDS:
 
 ```console
 sudo git clone my_project:<user>/<repo>.git
 ```
+
+### How to update?
 
 For update code from your repository, type into project directory:
 

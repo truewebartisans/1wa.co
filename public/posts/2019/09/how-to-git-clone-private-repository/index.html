@@ -7,11 +7,10 @@
 <meta name="author"
     content="Vic Shóstak ">
 <meta name="description"
-    content="Introduction Welcome! This is another article in the “How to” series.
-This time, we will try to do without magic!
-Objectives of the article  Show one of the easiest ways to clone your private GitHub repository; Train your console skills;  Let&amp;rsquo;s clone it! First, generate SSH key on your VDS:
-sudo ssh-keygen  Choose any name if you want, I use default name of key: rsa_key.
- Next step, create SSH config:" />
+    content="Introduction Welcome! The “How to” series continue. Today, we busted huge problem with GitHub: clone private repository to VDS.
+Objectives of the article  Show one of the easiest ways to clone your private GitHub repository; Train your console skills;  Prepare setup First, generate SSH key on your VDS:
+sudo ssh-keygen  Choose any name, if you want. I use default name id_rsa and dir ~/.ssh.
+ Generating public/private rsa key pair." />
 <meta name="keywords" content="web development team, web dev team, online business improve, web development, development team, online business" />
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="https://truewebartisans.com/posts/2019/09/how-to-git-clone-private-repository/" />
@@ -41,16 +40,15 @@ sudo ssh-keygen  Choose any name if you want, I use default name of key: rsa_key
 <link rel="mask-icon" href="https://truewebartisans.com/safari-pinned-tab.svg" color="#252627">
 <link rel="shortcut icon" href="https://truewebartisans.com/favicon.ico">
 <meta name="theme-color" content="#252627"><meta itemprop="name" content="How to make git clone for my private repository on GitHub?">
-<meta itemprop="description" content="Introduction Welcome! This is another article in the “How to” series.
-This time, we will try to do without magic!
-Objectives of the article  Show one of the easiest ways to clone your private GitHub repository; Train your console skills;  Let&rsquo;s clone it! First, generate SSH key on your VDS:
-sudo ssh-keygen  Choose any name if you want, I use default name of key: rsa_key.
- Next step, create SSH config:">
+<meta itemprop="description" content="Introduction Welcome! The “How to” series continue. Today, we busted huge problem with GitHub: clone private repository to VDS.
+Objectives of the article  Show one of the easiest ways to clone your private GitHub repository; Train your console skills;  Prepare setup First, generate SSH key on your VDS:
+sudo ssh-keygen  Choose any name, if you want. I use default name id_rsa and dir ~/.ssh.
+ Generating public/private rsa key pair.">
 
 
 <meta itemprop="datePublished" content="2019-09-16T20:10:00&#43;03:00" />
 <meta itemprop="dateModified" content="2019-09-16T20:10:00&#43;03:00" />
-<meta itemprop="wordCount" content="149">
+<meta itemprop="wordCount" content="250">
 
 
 
@@ -59,11 +57,10 @@ sudo ssh-keygen  Choose any name if you want, I use default name of key: rsa_key
 <meta name="twitter:image" content="https://truewebartisans.com"/>
 
 <meta name="twitter:title" content="How to make git clone for my private repository on GitHub?"/>
-<meta name="twitter:description" content="Introduction Welcome! This is another article in the “How to” series.
-This time, we will try to do without magic!
-Objectives of the article  Show one of the easiest ways to clone your private GitHub repository; Train your console skills;  Let&rsquo;s clone it! First, generate SSH key on your VDS:
-sudo ssh-keygen  Choose any name if you want, I use default name of key: rsa_key.
- Next step, create SSH config:"/>
+<meta name="twitter:description" content="Introduction Welcome! The “How to” series continue. Today, we busted huge problem with GitHub: clone private repository to VDS.
+Objectives of the article  Show one of the easiest ways to clone your private GitHub repository; Train your console skills;  Prepare setup First, generate SSH key on your VDS:
+sudo ssh-keygen  Choose any name, if you want. I use default name id_rsa and dir ~/.ssh.
+ Generating public/private rsa key pair."/>
 
 
 
@@ -122,7 +119,7 @@ sudo ssh-keygen  Choose any name if you want, I use default name of key: rsa_key
     <main class="post">
 
         <div class="post-info">
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>One minute
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>2 minutes
 
             
 
@@ -143,8 +140,10 @@ sudo ssh-keygen  Choose any name if you want, I use default name of key: rsa_key
 <ul>
 <li><a href="#objectives-of-the-article">Objectives of the article</a></li>
 </ul></li>
+<li><a href="#prepare-setup">Prepare setup</a></li>
 <li><a href="#let-s-clone-it">Let&rsquo;s clone it!</a>
 <ul>
+<li><a href="#how-to-update">How to update?</a></li>
 <li><a href="#questions">Questions</a></li>
 </ul></li>
 </ul></li>
@@ -161,9 +160,7 @@ sudo ssh-keygen  Choose any name if you want, I use default name of key: rsa_key
 
 <h2 id="introduction">Introduction</h2>
 
-<p>Welcome! This is another article in the “How to” series.</p>
-
-<p>This time, we will try to do without magic!</p>
+<p>Welcome! The “How to” series continue. Today, we busted huge problem with GitHub: clone private repository to VDS.</p>
 
 <h3 id="objectives-of-the-article">Objectives of the article</h3>
 
@@ -172,27 +169,63 @@ sudo ssh-keygen  Choose any name if you want, I use default name of key: rsa_key
 <li>Train your console skills;</li>
 </ol>
 
-<h2 id="let-s-clone-it">Let&rsquo;s clone it!</h2>
+<h2 id="prepare-setup">Prepare setup</h2>
 
 <p>First, generate SSH key on your VDS:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-console" data-lang="console">sudo ssh-keygen</code></pre></div>
 <blockquote>
-<p>Choose any name if you want, I use default name of key: <code>rsa_key</code>.</p>
+<p>Choose any name, if you want. I use default name <code>id_rsa</code> and dir <code>~/.ssh</code>.</p>
 </blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-console" data-lang="console">Generating public/private rsa key pair.
 
+Enter file in which to save the key (~/.ssh/id_rsa): &lt;file name&gt;
+
+Enter passphrase (empty for no passphrase): &lt;password&gt;
+Enter same passphrase again: &lt;password again&gt;
+
+Your identification has been saved in ~/.ssh/id_rsa.
+Your public key has been saved in ~/.ssh/id_rsa.pub.
+
+The key fingerprint is:
+SHA256:Hs516tDZPzK0b+/cQhNiyWZUJwnaeDqOShMBBQidhBX user@vds.local
+
+The key&#39;s randomart image is:
++---[RSA 2048]----+
+|.o.o  **E=       |
+|=*ooo..          |
+|  o.+ .          |
+|   = .           |
+|  o   . S      ..|
+|     o..o .......|
+|    ..** o....o. |
+|      oo   o+o==.|
+|     .o.+.   . o=|
++----[SHA256]-----+</code></pre></div>
 <p>Next step, create SSH config:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo cat &gt;~/.ssh/config <span style="color:#e6db74">&lt;&lt;EOL
 </span><span style="color:#e6db74">
 </span><span style="color:#e6db74">Host my_project
 </span><span style="color:#e6db74">Hostname github.com
 </span><span style="color:#e6db74">User git
-</span><span style="color:#e6db74">IdentityFile ~/.ssh/rsa_key
+</span><span style="color:#e6db74">IdentityFile ~/.ssh/id_rsa
 </span><span style="color:#e6db74">
 </span><span style="color:#e6db74">EOL</span></code></pre></div>
 <p>And now, copy public key to clipboard:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-console" data-lang="console">sudo cat ~/.ssh/rsa_key.pub</code></pre></div>
-<p>Go to your GitHub repository settings. Add copied public key to <code>Deploy Keys</code> section. That&rsquo;s it! You may git clone your private repository on VDS:</p>
+<p>Go to your GitHub repository settings. Add copied public key to <code>Deploy Keys</code> section.</p>
+
+<p><img src="https://user-images.githubusercontent.com/11155743/65852734-bdf72600-e35f-11e9-900d-d8ca0f58b29e.png" alt="GitHub Deploy Keys section" /></p>
+
+<blockquote>
+<p>Don&rsquo;t forget check <code>Allow write access</code>. That&rsquo;s it!</p>
+</blockquote>
+
+<h2 id="let-s-clone-it">Let&rsquo;s clone it!</h2>
+
+<p>You may git clone your private repository on VDS:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-console" data-lang="console">sudo git clone my_project:&lt;user&gt;/&lt;repo&gt;.git</code></pre></div>
+<h3 id="how-to-update">How to update?</h3>
+
 <p>For update code from your repository, type into project directory:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-console" data-lang="console">git pull</code></pre></div>
 <h3 id="questions">Questions</h3>
@@ -212,7 +245,7 @@ sudo ssh-keygen  Choose any name if you want, I use default name of key: rsa_key
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://truewebartisans.com/tags/howto">howto</a></span><span class="tag"><a href="https://truewebartisans.com/tags/vds">VDS</a></span><span class="tag"><a href="https://truewebartisans.com/tags/git">git</a></span><span class="tag"><a href="https://truewebartisans.com/tags/private">private</a></span><span class="tag"><a href="https://truewebartisans.com/tags/repository">repository</a></span><span class="tag"><a href="https://truewebartisans.com/tags/github">GitHub</a></span>
                 </p>
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>149 Words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>250 Words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>Mon, 16 Sep 2019, 20:10 MSK</p>
         </div>

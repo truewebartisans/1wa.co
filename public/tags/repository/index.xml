@@ -17,11 +17,10 @@
       <pubDate>Mon, 16 Sep 2019 20:10:00 +0300</pubDate>
       
       <guid>https://truewebartisans.com/posts/2019/09/how-to-git-clone-private-repository/</guid>
-      <description>Introduction Welcome! This is another article in the “How to” series.
-This time, we will try to do without magic!
-Objectives of the article  Show one of the easiest ways to clone your private GitHub repository; Train your console skills;  Let&amp;rsquo;s clone it! First, generate SSH key on your VDS:
-sudo ssh-keygen  Choose any name if you want, I use default name of key: rsa_key.
- Next step, create SSH config:</description>
+      <description>Introduction Welcome! The “How to” series continue. Today, we busted huge problem with GitHub: clone private repository to VDS.
+Objectives of the article  Show one of the easiest ways to clone your private GitHub repository; Train your console skills;  Prepare setup First, generate SSH key on your VDS:
+sudo ssh-keygen  Choose any name, if you want. I use default name id_rsa and dir ~/.ssh.
+ Generating public/private rsa key pair.</description>
     </item>
     
   </channel>
