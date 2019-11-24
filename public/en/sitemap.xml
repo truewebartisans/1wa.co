@@ -1,6 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://truewebartisans.com/posts/2019/11/good-to-know-v-lang/</loc>
+    <lastmod>2019-11-24T10:10:00+03:00</lastmod>
+  </url>
   
   <url>
     <loc>https://truewebartisans.com/posts/2019/09/how-to-git-clone-private-repository/</loc>
@@ -20,6 +25,66 @@
                 hreflang="en"
                 href="https://truewebartisans.com/posts/2019/05/native-macos-app-on-golang-and-react/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://truewebartisans.com/posts/</loc>
+    <lastmod>2019-11-24T10:10:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://truewebartisans.com/ru/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://truewebartisans.com/posts/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://truewebartisans.com/tags/programing-language/</loc>
+    <lastmod>2019-11-24T10:10:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://truewebartisans.com/tags/</loc>
+    <lastmod>2019-11-24T10:10:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://truewebartisans.com/ru/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://truewebartisans.com/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://truewebartisans.com/</loc>
+    <lastmod>2019-11-24T10:10:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://truewebartisans.com/ru/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://truewebartisans.com/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://truewebartisans.com/tags/v/</loc>
+    <lastmod>2019-11-24T10:10:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://truewebartisans.com/tags/vlang/</loc>
+    <lastmod>2019-11-24T10:10:00+03:00</lastmod>
   </url>
   
   <url>
@@ -48,21 +113,6 @@
   </url>
   
   <url>
-    <loc>https://truewebartisans.com/posts/</loc>
-    <lastmod>2019-09-16T20:10:00+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="https://truewebartisans.com/ru/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://truewebartisans.com/posts/"
-                />
-  </url>
-  
-  <url>
     <loc>https://truewebartisans.com/tags/private/</loc>
     <lastmod>2019-09-16T20:10:00+03:00</lastmod>
   </url>
@@ -70,36 +120,6 @@
   <url>
     <loc>https://truewebartisans.com/tags/repository/</loc>
     <lastmod>2019-09-16T20:10:00+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://truewebartisans.com/tags/</loc>
-    <lastmod>2019-09-16T20:10:00+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="https://truewebartisans.com/ru/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://truewebartisans.com/tags/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://truewebartisans.com/</loc>
-    <lastmod>2019-09-16T20:10:00+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="https://truewebartisans.com/ru/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://truewebartisans.com/"
-                />
   </url>
   
   <url>

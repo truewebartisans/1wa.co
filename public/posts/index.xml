@@ -5,8 +5,149 @@
         <description>Recent content in Posts on True web artisans</description>
         <generator>Hugo -- gohugo.io</generator>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC-ND 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Mon, 16 Sep 2019 20:10:00 +0300</lastBuildDate>
+        <lastBuildDate>Sun, 24 Nov 2019 10:10:00 +0300</lastBuildDate>
         <atom:link href="https://truewebartisans.com/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>The V programming language</title>
+            <link>https://truewebartisans.com/posts/2019/11/good-to-know-v-lang/</link>
+            <pubDate>Sun, 24 Nov 2019 10:10:00 +0300</pubDate>
+            
+            <guid>https://truewebartisans.com/posts/2019/11/good-to-know-v-lang/</guid>
+            <description>Introduction Hello! I&amp;rsquo;m starting “Good to know” series. And now, I so excited to show you very yong, but simple, fast, safe &amp;amp; compiled programming language called V (or vlang for Google Search bots).
+Objectives of the article  Story of V; Hello World; Main features of language; How to install and update;  What&amp;rsquo;s &amp;ldquo;V&amp;rdquo; mean? No, Alexander Medvednikov (author of V programming language) do not fan of &amp;ldquo;V for Vendetta&amp;rdquo; movie.</description>
+            <content type="html"><![CDATA[
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Hello! I&rsquo;m starting “Good to know” series. And now, I so excited to show you very yong, but simple, fast, safe &amp; compiled programming language called <strong>V</strong> (or <strong>vlang</strong> for Google Search bots).</p>
+
+<h3 id="objectives-of-the-article">Objectives of the article</h3>
+
+<ol>
+<li>Story of V;</li>
+<li>Hello World;</li>
+<li>Main features of language;</li>
+<li>How to install and update;</li>
+</ol>
+
+<h2 id="what-s-v-mean">What&rsquo;s &ldquo;V&rdquo; mean?</h2>
+
+<p>No, <a href="https://github.com/medvednikov" target="_blank">Alexander Medvednikov</a> (author of V programming language) do not fan of &ldquo;V for Vendetta&rdquo; movie. But it&rsquo;s very interesting story:</p>
+
+<blockquote>
+<p>Initially the language had the same name as the product it was created for: Volt. The extension was &ldquo;.v&rdquo;, I didn&rsquo;t want to mess up git history, so I decided to name it V :)</p>
+
+<p>It&rsquo;s a simple name that reflects the simplicity of the language, and it&rsquo;s easy to pronounce for everyone in the world.</p>
+
+<p>— Alexander Medvednikov</p>
+</blockquote>
+
+<h2 id="the-v-s-hello-world">The V&rsquo;s &ldquo;Hello World&rdquo;!</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// hello_world.v
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">fn</span> <span style="color:#a6e22e">main</span>() {
+  <span style="color:#a6e22e">w</span> <span style="color:#f92672">:=</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">World</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+  println(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Hello</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">w</span>!<span style="color:#960050;background-color:#1e0010">&#39;</span>)
+}</code></pre></div>
+<p>Clear and simple, uh? What if I tell you that this code can be written in even shorter form? If your program is only single file (all code in one file), V allows you to drop <code>fn main() {...}</code>. Like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// hello_world.v
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">w</span> <span style="color:#f92672">:=</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">World</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+println(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Hello</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">w</span>!<span style="color:#960050;background-color:#1e0010">&#39;</span>)</code></pre></div>
+<p>Yes, this is a valid V code too!</p>
+
+<h2 id="main-features">Main features</h2>
+
+<h3 id="v-is-written-in-v">V is written in V</h3>
+
+<p>The entire language and its standard library are less than 1 MB and can be built in less than 0.6 seconds.</p>
+
+<p>V compiles between ≈100k and 1.2 million lines of code per second per CPU core (without hardware optimization).</p>
+
+<h3 id="as-fast-as-c">As fast as C</h3>
+
+<p>Minimal amount of allocations, plus built-in serialization without runtime reflection. Compiles to native binaries without any dependencies.</p>
+
+<h3 id="safety">Safety</h3>
+
+<ul>
+<li>No: null, global variables, variable shadowing and undefined values + behavior;</li>
+<li>Yes: bounds checking, option/result types, generics;</li>
+<li>By default: immutable variables + structs, pure functions;</li>
+</ul>
+
+<h3 id="similar-to-another-languages">Similar to another languages</h3>
+
+<p>If you work with C, Go, Rust or JavaScript, you&rsquo;re ready to write code on V! Don&rsquo;t trust me, read program code near and answer &ldquo;what each line do?&rdquo;:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> <span style="color:#a6e22e">time</span>
+<span style="color:#f92672">import</span> <span style="color:#a6e22e">http</span>
+
+<span style="color:#a6e22e">fn</span> <span style="color:#a6e22e">main</span>() {
+  <span style="color:#a6e22e">resp</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">get</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">https</span>:<span style="color:#75715e">//vlang.io/utc_now&#39;) or {
+</span><span style="color:#75715e"></span>    println(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">failed</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">fetch</span> <span style="color:#a6e22e">data</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">server</span><span style="color:#960050;background-color:#1e0010">&#39;</span>)
+    <span style="color:#66d9ef">return</span>
+  }
+
+  <span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">unix</span>(<span style="color:#a6e22e">resp</span>.<span style="color:#a6e22e">text</span>.int())
+  println(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">format</span>())
+}</code></pre></div>
+<p>This program go to external HTTP server, return UNIX timestamp or print <code>failed ...</code>. Next, we set to <code>t</code> variable normalized date and time by standard V library <code>time</code> and print result. Simple to read, easy to write!</p>
+
+<h3 id="build-in-package-manager">Build-in package manager</h3>
+
+<p>The V Package Manager (<a href="https://vpm.best/" target="_blank">vpm</a>) — it&rsquo;s package management tool similar to NPM by Node.js.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-console" data-lang="console">v install [module]</code></pre></div>
+<h3 id="plugins-for-v-syntax-on-popular-code-editors">Plugins for V syntax on popular code editors</h3>
+
+<ol>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=0x9ef.vscode-vlang&amp;ssr=false" target="_blank">VS Code</a></li>
+<li><a href="https://github.com/ollykel/v-vim" target="_blank">Vim</a></li>
+<li><a href="https://github.com/vlang/vid" target="_blank">Vid</a> (1 MB editor written in V)</li>
+</ol>
+
+<h2 id="prepare-and-install-v">Prepare and install V</h2>
+
+<p>Okay, time to try V on your computer!</p>
+
+<blockquote>
+<p>Because I work only on macOS, I show installation process only for this OS. Windows users, sorry&hellip;</p>
+</blockquote>
+
+<p>First, go to console and clone V repository:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-console" data-lang="console">git clone https://github.com/vlang/v</code></pre></div>
+<p>Next, go to v folder and run <code>make</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-console" data-lang="console">cd v
+make</code></pre></div>
+<p>That&rsquo;s all. V was installed to <code>/usr/local/bin/v</code> path.</p>
+
+<h3 id="update-v">Update V</h3>
+
+<p>For update V to latest version, simply type <code>/usr/local/bin/v up</code> on console.</p>
+
+<h2 id="more-about-v-language">More about V language</h2>
+
+<ul>
+<li>GitHub repository — <a href="https://github.com/vlang/v" target="_blank">https://github.com/vlang/v</a></li>
+<li>Official docs — <a href="https://vlang.io/docs" target="_blank">https://vlang.io/docs</a></li>
+</ul>
+
+<h3 id="fresh-news">Fresh news</h3>
+
+<ul>
+<li>Twitter — <a href="https://twitter.com/v_language" target="_blank">https://twitter.com/v_language</a></li>
+<li>Telegram — <a href="https://t.me/vlang_en" target="_blank">EN</a>, <a href="https://t.me/vlang_ru" target="_blank">RU</a>, <a href="https://t.me/vlang_it" target="_blank">IT</a>, <a href="https://t.me/vlang_zh" target="_blank">ZH</a></li>
+</ul>
+
+<h2 id="exercises">Exercises</h2>
+
+<ol>
+<li>Find in V official web site comparison to other languages;</li>
+<li>Go to official V <a href="https://vlang.io/play" target="_blank">Playground</a> and write some code;</li>
+<li>Install V on your computer, go to <code>example</code> folder on GitHub repository and run &ldquo;Game of life&rdquo;;</li>
+</ol>
+]]></content>
+        </item>
         
         <item>
             <title>How to make git clone for my private repository on GitHub?</title>
