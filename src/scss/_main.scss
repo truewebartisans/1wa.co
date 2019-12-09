@@ -1,0 +1,15 @@
+// Reset
+@import "reset.scss";
+
+// Vendor
+@import "../../node_modules/animate.css/source/_base.css";
+@import "../../node_modules/animate.css/source/sliding_entrances/slideInUp.css";
+// @import "../../node_modules/animate.css/source/sliding_entrances/slideInLeft.css";
+// @import "../../node_modules/animate.css/source/sliding_entrances/slideInRight.css";
+
+// Site styles
+@import "_variables.scss";
+@import "style.scss";
+
+// @media queries
+@import "media_queries.scss";

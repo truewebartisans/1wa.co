@@ -1,0 +1,33 @@
+// Typography
+@font-face {
+    font-family: "Inter var";
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+    font-named-instance: "Regular";
+    src: url("../fonts/Inter-roman.var.woff2?v=3.11") format("woff2");
+}
+
+@font-face {
+    font-family: "Inter var";
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: italic;
+    font-named-instance: "Italic";
+    src: url("../fonts/Inter-italic.var.woff2?v=3.11") format("woff2");
+}
+
+$variable-font-family: "Inter var", sans-serif;
+$variable-font-weight: 200;
+
+$default-font-family: "Open Sans", Helvetica, Tahoma, Arial, sans-serif;
+$default-font-weight: 300;
+
+$font-size: 16px;
+
+// Colors
+$black: #2c2c2c;
+$white: #ffffff;
+$grey: #f6f6f6;
+$grey-light: #ebebeb;
+$grey-dark: #d6d4d4;

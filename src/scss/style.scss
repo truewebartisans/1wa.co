@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: $default-font-family;
+    font-weight: $default-font-weight;
+    font-size: calc(#{$font-size} + 2px);
+}
+
+@supports (font-variation-settings: normal) {
+    html {
+        font-family: $variable-font-family;
+        font-weight: $variable-font-weight;
+        font-size: $font-size;
+    }
+}
+
+body {
+    background-color: $grey;
+    color: $black;
+}
+
+h1 span {
+    color: $grey-light;
+    font-weight: 400;
+}
+
+ul {
+    margin-left: calc(#{$font-size} + 4%);
+    list-style: none;
+}
+
+li::before {
+    content: "●";
+    color: $grey-dark;
+    display: inline-block;
+    width: 2rem;
+    margin-left: -2rem;
+}
+
+p,
+ul {
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+strong {
+    font-weight: 500;
+}
+
+a {
+    color: $black;
+    text-decoration: none;
+    border-bottom: 1px solid $black;
+}
+
+a:hover {
+    color: $black;
+    border-bottom: 0;
+}
+
+.container {
+    display: grid;
+    background-color: $white;
+    border-radius: 40px 0 0 0;
+    box-shadow: $grey-dark -4px 0 30px;
+}
+
+.about {
+    grid-area: about;
+}
+
+.logo_char {
+    grid-area: logo_char;
+}
+
+.email_contact {
+    grid-area: email_contact;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.item {
+    padding: 80px;
+}
+
+.item.dark {
+    background-color: $black;
+    color: $grey-dark;
+}
+
+.item.dark p {
+    margin-bottom: 0;
+}
+
+.item.dark a {
+    color: $grey-dark;
+    border-bottom: 1px solid $grey-dark;
+}
+
+.item.dark a:hover {
+    color: $grey-dark;
+    border-bottom: 0;
+}
+
+.char {
+    width: 100%;
+}
+
+.center {
+    text-align: center;
+}
+
+.sticky {
+    position: sticky;
+    top: 40px;
+}
+
+.sticky:before,
+.sticky:after {
+    content: "";
+    display: table;
+}
+
+.spacer {
+    min-height: calc(#{$font-size});
+}

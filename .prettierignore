@@ -1,6 +1,9 @@
 .editorconfig
 .gitignore
 .prettierignore
-public/
-layouts/
+
+node_modules/*
+build/*
+dist/*
+
 **/*.svg

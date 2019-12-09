@@ -1,0 +1,38 @@
+{
+    "name": "1wa.co",
+    "version": "1.0.0",
+    "description": "True web artisans site.",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "clear": "rm -rf ./build",
+        "start": "parcel ./src/pug/index.pug --open",
+        "build": "parcel build ./src/pug/index.pug -d ./build",
+        "copy:common": "cp ./src/common/* ./build",
+        "prod": "npm run clear && npm run build && npm run copy:common"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/truewebartisans/1wa.co.git"
+    },
+    "keywords": [
+        "www",
+        "site",
+        "pure",
+        "web",
+        "dev"
+    ],
+    "author": "Vic Shóstak",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/truewebartisans/1wa.co/issues"
+    },
+    "homepage": "https://github.com/truewebartisans/1wa.co#readme",
+    "devDependencies": {
+        "animate.css": "^3.7.2",
+        "cssnano": "^4.1.10",
+        "pug": "^2.0.4",
+        "sass": "^1.23.7",
+        "stickyfilljs": "^2.1.0"
+    }
+}
