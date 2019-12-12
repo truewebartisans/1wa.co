@@ -1,4 +1,14 @@
+// macOS
 .DS_Store
-.cache/
-node_modules/
-dist/
+
+// IDE
+.idea/
+.vscode/
+
+// Frontend
+**/.cache/
+**/node_modules/
+**/dist/
+
+// Backend
+deploy/

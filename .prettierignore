@@ -2,8 +2,8 @@
 .gitignore
 .prettierignore
 
-node_modules/*
-build/*
-dist/*
+**/node_modules/*
+**/dist/*
+static/*
 
 **/*.svg
