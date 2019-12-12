@@ -5,11 +5,10 @@ run:
 	&& go run ./main.go
 	@echo "[✔️] App is running!"
 
-init:
+front:
 	cd web \
-	&& npm install \
-	&& npm start
-	@echo "[✔️] Init complete!"
+	&& npm run build:prod
+	@echo "[✔️] Frontend build complete!"
 
 build:
 	cd web \
@@ -18,4 +17,4 @@ build:
 	&& rm -rf ./deploy \
 	&& mkdir -p ./deploy \
 	&& go build -o ./deploy/http_server_1wa
-	@echo "[✔️] Build complete!"
+	@echo "[✔️] App build complete!"

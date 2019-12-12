@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clear": "rm -rf ../static",
     "start": "parcel ./src/pug/index.pug --open",
-    "build": "parcel build ./src/pug/index.pug -d ../static",
+    "build": "parcel build ./src/pug/*.pug -d ../static --public-url ./",
     "copy:common": "cp ./src/common/* ../static",
     "build:prod": "npm run clear && npm run build && npm run copy:common"
   },
