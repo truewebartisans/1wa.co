@@ -63,6 +63,9 @@ echo "### Starting nginx ..."
 # Restarting for case if nginx container is already started
 docker-compose up -d nginx && docker-compose restart nginx
 
+echo "### Test nginx ..."
+curl http://$domain_name
+
 # Select appropriate email arg
 case "$email" in
   "") email_arg="--register-unsafely-without-email" ;;
