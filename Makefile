@@ -1,5 +1,7 @@
 .PHONY: run
 
+default: run
+
 run:
 	pkger \
 	&& go run ./main.go
@@ -14,7 +16,7 @@ build:
 	cd web \
 	&& npm run build:prod \
 	&& cd .. \
-	&& rm -rf ./deploy \
-	&& mkdir -p ./deploy \
-	&& go build -o ./deploy/http_server_1wa
+	&& rm ./http_server_1wa \
+	&& pkger \
+	&& go build -o ./http_server_1wa
 	@echo "[✔️] App build complete!"
