@@ -4,7 +4,7 @@ domains=("1wa.co www.1wa.co")
 email="truewebartisans@gmail.com" # Adding a valid address is strongly recommended
 staging=1 # Set to 1 if you're testing your setup to avoid hitting request limits
 
-data_path="../certbot"
+data_path="./certbot"
 rsa_key_size=4096
 regex="([^www.].+)"
 
