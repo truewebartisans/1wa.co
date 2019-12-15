@@ -1,16 +1,4 @@
-.PHONY: run
-
-default: run
-
-run:
-	pkger \
-	&& go run ./main.go
-	@echo "[✔️] App is running!"
-
-front:
-	cd web \
-	&& npm run build:prod
-	@echo "[✔️] Frontend build complete!"
+.PHONY: build
 
 build:
 	cd web \
@@ -20,3 +8,13 @@ build:
 	&& pkger \
 	&& go build -o ./http_server_1wa
 	@echo "[✔️] App build complete!"
+
+backend:
+	pkger \
+	&& go run ./main.go
+	@echo "[✔️] App backend is running!"
+
+frontend:
+	cd web \
+	&& npm start
+	@echo "[✔️] App frontend is running!"

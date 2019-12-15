@@ -1,134 +1,128 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    font-family: $default-font-family;
-    font-weight: $default-font-weight;
-    font-size: calc(#{$font-size} + 2px);
+  font-family: $default-font-family;
+  font-weight: $default-font-weight;
+  font-size: calc(#{$font-size} + 2px);
 }
 
 @supports (font-variation-settings: normal) {
-    html {
-        font-family: $variable-font-family;
-        font-weight: $variable-font-weight;
-        font-size: $font-size;
-    }
+  html {
+    font-family: $variable-font-family;
+    font-weight: $variable-font-weight;
+    font-size: $font-size;
+  }
 }
 
 body {
-    background-color: $grey;
-    color: $black;
+  width: 100%;
+  height: 100%;
+  background-color: $grey;
+  color: $black;
 }
 
 h1 span {
-    color: $grey-light;
-    font-weight: 400;
+  color: $grey-light;
+  font-weight: 400;
 }
 
 ul {
-    margin-left: calc(#{$font-size} + 4%);
-    list-style: none;
+  margin-left: calc(#{$font-size} + 4%);
+  list-style: none;
 }
 
 li::before {
-    content: "●";
-    color: $grey-dark;
-    display: inline-block;
-    width: 2rem;
-    margin-left: -2rem;
+  content: "●";
+  color: $grey-dark;
+  display: inline-block;
+  width: 2rem;
+  margin-left: -2rem;
 }
 
 p,
 ul {
-    font-weight: 300;
-    margin-bottom: 2rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
 }
 
 strong {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 a {
-    color: $black;
-    text-decoration: none;
-    border-bottom: 1px solid $black;
+  color: $black;
+  text-decoration: none;
+  border-bottom: 1px solid $black;
 }
 
 a:hover {
-    color: $black;
-    border-bottom: 0;
+  color: $black;
+  border-bottom: 0;
+}
+
+.wrapper {
+  background-color: $white;
+  border-radius: 40px 0 0 0;
+  box-shadow: $grey-dark -4px 0 30px;
 }
 
 .container {
-    display: grid;
-    background-color: $white;
-    border-radius: 40px 0 0 0;
-    box-shadow: $grey-dark -4px 0 30px;
+  display: grid;
 }
 
-.about {
-    grid-area: about;
+.container.gradient-gray {
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 
-.logo_char {
-    grid-area: logo_char;
+.container.gradient-gray-inverted {
+  background-image: linear-gradient(120deg, #ebedee 0%, #fdfbfb 100%);
 }
 
-.email_contact {
-    grid-area: email_contact;
+.container.gradient-black {
+  background-color: $black;
+  color: $white;
 }
 
-.footer {
-    grid-area: footer;
+.container.gradient-black a {
+  color: $grey-dark;
+  border-bottom: 1px solid $grey-dark;
 }
 
-.footer {
-    grid-area: footer;
+.container.gradient-black a:hover {
+  color: $grey-dark;
+  border-bottom: 0;
+}
+
+.item.small-font p {
+  font-size: calc(#{$font-size});
+  margin-bottom: calc(#{$font-size});
 }
 
 .item {
-    padding: 80px;
-}
-
-.item.dark {
-    background-color: $black;
-    color: $grey-dark;
-}
-
-.item.dark p {
-    margin-bottom: 0;
-}
-
-.item.dark a {
-    color: $grey-dark;
-    border-bottom: 1px solid $grey-dark;
-}
-
-.item.dark a:hover {
-    color: $grey-dark;
-    border-bottom: 0;
+  padding: 80px;
 }
 
 .char {
-    width: 100%;
+  width: 100%;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .sticky {
-    position: sticky;
-    top: 40px;
+  position: sticky;
+  top: 40px;
 }
 
 .sticky:before,
 .sticky:after {
-    content: "";
-    display: table;
+  content: "";
+  display: table;
 }
 
 .spacer {
-    min-height: calc(#{$font-size});
+  min-height: calc(#{$font-size});
 }

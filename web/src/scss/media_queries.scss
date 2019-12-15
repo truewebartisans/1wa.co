@@ -8,8 +8,8 @@
   }
 
   h1 {
-    font-size: calc(#{$font-size} + 60%);
-    line-height: calc(#{$font-size} + 60%);
+    font-size: calc(#{$font-size} + 55%);
+    line-height: calc(#{$font-size} + 150%);
     font-weight: 600;
   }
 
@@ -36,16 +36,16 @@
     margin-bottom: calc(#{$font-size} - 10px);
   }
 
-  .container {
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-    grid-template-areas:
-      "about"
-      "logo_char"
-      "email_contact"
-      "footer";
+  .wrapper {
     min-height: calc(100vh - 10px);
     margin-top: 10px;
     margin-left: 10px;
+  }
+
+  .container {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: auto;
   }
 
   .item {
@@ -63,8 +63,8 @@
 
 @media only screen and (min-device-width: 768px) {
   h1 {
-    font-size: calc(#{$font-size} + 100%);
-    line-height: calc(#{$font-size} + 100%);
+    font-size: calc(#{$font-size} + 150%);
+    line-height: calc(#{$font-size} + 150%);
   }
 
   h2 {
@@ -83,7 +83,7 @@
     line-height: calc(#{$font-size} + 30%);
   }
 
-  .container {
+  .wrapper {
     min-height: calc(100vh - 50px);
     margin-top: 50px;
     margin-left: 50px;
@@ -103,15 +103,26 @@
 }
 
 @media only screen and (min-device-width: 1024px) {
-  .container {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-template-areas:
-      "about logo_char"
-      "email_contact email_contact"
-      "footer footer";
+  h1 {
+    font-size: calc(#{$font-size} + 100%);
+    line-height: calc(#{$font-size} + 150%);
+  }
+
+  .wrapper {
     min-height: calc(100vh - 60px);
     margin-top: 60px;
     margin-left: 60px;
+  }
+
+  .container {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-template-areas: auto auto;
+  }
+
+  .container.hero {
+    grid-template-columns: auto;
+    grid-template-areas: auto;
   }
 
   .item {
@@ -145,7 +156,7 @@
     line-height: calc(#{$font-size} + 50%);
   }
 
-  .container {
+  .wrapper {
     min-height: calc(100vh - 70px);
     margin-top: 70px;
     margin-left: 70px;
@@ -163,7 +174,7 @@
 @media only screen and (min-device-width: 1440px) {
   h1 {
     font-size: calc(#{$font-size} + 200%);
-    line-height: calc(#{$font-size} + 200%);
+    line-height: calc(#{$font-size} + 150%);
   }
 
   h2 {
@@ -186,7 +197,7 @@
     line-height: calc(#{$font-size} + 60%);
   }
 
-  .container {
+  .wrapper {
     min-height: calc(100vh - 80px);
     margin-top: 80px;
     margin-left: 80px;
@@ -204,7 +215,7 @@
 @media only screen and (min-device-width: 1920px) {
   h1 {
     font-size: calc(#{$font-size} + 250%);
-    line-height: calc(#{$font-size} + 250%);
+    line-height: calc(#{$font-size} + 150%);
   }
 
   h2 {
@@ -227,14 +238,14 @@
     line-height: calc(#{$font-size} + 70%);
   }
 
-  .container {
-    min-height: calc(100vh - 80px);
-    margin-top: 80px;
-    margin-left: 80px;
+  .wrapper {
+    min-height: calc(100vh - 150px);
+    margin-top: 150px;
+    margin-left: 150px;
   }
 
   .item {
-    padding: 80px;
+    padding: 150px;
   }
 
   .char {
@@ -245,7 +256,7 @@
 @media only screen and (min-device-width: 2560px) {
   h1 {
     font-size: calc(#{$font-size} + 300%);
-    line-height: calc(#{$font-size} + 300%);
+    line-height: calc(#{$font-size} + 150%);
   }
 
   h2 {
@@ -268,14 +279,14 @@
     line-height: calc(#{$font-size} + 80%);
   }
 
-  .container {
-    min-height: calc(100vh - 100px);
-    margin-top: 100px;
-    margin-left: 100px;
+  .wrapper {
+    min-height: calc(100vh - 200px);
+    margin-top: 200px;
+    margin-left: 200px;
   }
 
   .item {
-    padding: 100px;
+    padding: 200px;
   }
 
   .char {
