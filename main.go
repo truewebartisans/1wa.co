@@ -12,8 +12,7 @@ func main() {
 
 	http.Handle("/", http.FileServer(static))
 
-	err := http.ListenAndServe(":8080", nil)
-	if err != nil {
+	if err := http.ListenAndServe(":8080", nil); err != nil {
 		log.Fatal(err)
 	}
 }
