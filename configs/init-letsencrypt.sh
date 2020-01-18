@@ -30,10 +30,10 @@ do
                 # Error
 				echo; echo "[x] Error: Value for option $1 is required!"; echo;
                 exit
-				clear
+                clear
             fi
-		shift
-		;;
+        shift
+        ;;
         --email)
             # Check option value
             if ! [[ -z "$2" ]]; then
@@ -45,23 +45,23 @@ do
                 exit
 				clear
             fi
-		shift
-		;;
+        shift
+        ;;
         --staging)
             # Check option value
             if ! [[ -z "$2" ]]; then
-				# Set to 1 if you're testing your setup to avoid hitting request limits
-				staging=$2
+              # Set to 1 if you're testing your setup to avoid hitting request limits
+              staging=$2
             else
                 # Error
-				echo; echo "[x] Error: Value for option $1 is required!"; echo;
+                echo; echo "[x] Error: Value for option $1 is required!"; echo;
                 exit
-				clear
+                clear
             fi
-		shift
-		;;
-		*)
-            # Error
+        shift
+        ;;
+        *)
+			# Error
 			echo; echo "[x] Error: Unknown option $1 with value $2..."; echo;
 			exit
 			clear
