@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Check for granted options
 if [[ -z "$@" ]]; then
