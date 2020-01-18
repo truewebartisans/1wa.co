@@ -72,7 +72,7 @@ do
 done
 
 # Define Certbot folder
-data_path="../certbot"
+data_path="./certbot"
 # Set RSA key size
 rsa_key_size=4096
 # Recommended TLS parameters
