@@ -9,3 +9,6 @@
 **/.cache/
 **/node_modules/
 **/dist/
+
+# Webserver
+**/certbot/
