@@ -1,14 +1,11 @@
-// macOS
+# macOS
 .DS_Store
 
-// IDE
+# IDE
 .idea/
 .vscode/
 
-// Frontend
+# Frontend
 **/.cache/
 **/node_modules/
 **/dist/
-
-// Build
-build/

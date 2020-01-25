@@ -8,8 +8,9 @@ if [[ -z "$@" ]]; then
 		echo "[i] Help: Available options"
 		echo
 		echo "  --domains \"[LIST]\"	list of domains (require: quotes and 1 space between each domain)"
-		echo "  --email [STRING]	valid E-mail address (is strongly recommended by Certbot)"
-		echo "  --staging [NUMBER]	set to 1 if you're testing your setup (to avoid hitting request limits)"
+		echo "  --email [STRING]		valid E-mail address (is strongly recommended by Certbot)"
+		echo "  --data-path [STRING]	path to Certbot folder"
+		echo "  --staging [NUMBER]		set to 1 if you're testing your setup (to avoid hitting request limits)"
 		echo
 	}
 	exit
@@ -30,10 +31,10 @@ do
                 # Error
 				echo; echo "[x] Error: Value for option $1 is required!"; echo;
                 exit
-                clear
+				clear
             fi
-        shift
-        ;;
+		shift
+		;;
         --email)
             # Check option value
             if ! [[ -z "$2" ]]; then
@@ -45,23 +46,36 @@ do
                 exit
 				clear
             fi
-        shift
-        ;;
+		shift
+		;;
+		--data-path)
+            # Check option value
+            if ! [[ -z "$2" ]]; then
+				# Path to Certbot folder
+				data_path=$2
+            else
+                # Error
+				echo; echo "[x] Error: Value for option $1 is required!"; echo;
+                exit
+				clear
+            fi
+		shift
+		;;
         --staging)
             # Check option value
             if ! [[ -z "$2" ]]; then
-              # Set to 1 if you're testing your setup to avoid hitting request limits
-              staging=$2
+				# Set to 1 if you're testing your setup to avoid hitting request limits
+				staging=$2
             else
                 # Error
-                echo; echo "[x] Error: Value for option $1 is required!"; echo;
+				echo; echo "[x] Error: Value for option $1 is required!"; echo;
                 exit
-                clear
+				clear
             fi
-        shift
-        ;;
-        *)
-			# Error
+		shift
+		;;
+		*)
+            # Error
 			echo; echo "[x] Error: Unknown option $1 with value $2..."; echo;
 			exit
 			clear
@@ -71,8 +85,6 @@ do
     shift
 done
 
-# Define Certbot folder
-data_path="./certbot"
 # Set RSA key size
 rsa_key_size=4096
 # Recommended TLS parameters

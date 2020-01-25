@@ -1,0 +1,21 @@
+
+# Files
+.dockerignore
+.editorconfig
+.eslintignore
+.eslintrc
+.gitignore
+.prettierignore
+.prettierrc
+.eslintrc.json
+Dockerfile
+LICENSE
+*.md
+*.log
+
+# Folders
+.cache/
+dist/
+node_modules/
+build/
+tests/
