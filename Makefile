@@ -1,11 +1,11 @@
-.PHONY: build
+.PHONY: run
+
+run:
+	@cd frontend && npm start
 
 build:
 	@cd frontend && npm run build:prod
 	@echo "[✔️] App build complete!"
-
-run:
-	@cd frontend && npm start
 
 certbot-test:
 	@cd webserver
@@ -16,7 +16,7 @@ certbot-test:
 								--data-path ./certbot \
 								--staging 1
 
-certbot:
+certbot-prod:
 	@cd webserver
 	@chmod +x ./webserver/register_ssl_for_domain.sh
 	@./webserver/register_ssl_for_domain.sh \
@@ -31,7 +31,7 @@ deploy-test:
 					-f docker-compose.prod.yml \
 					up --build --force-recreate
 
-deploy:
+deploy-prod:
 	@docker-compose \
 					-f docker-compose.yml \
 					-f docker-compose.prod.yml \
