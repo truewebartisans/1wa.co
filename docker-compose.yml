@@ -13,8 +13,6 @@ services:
       - ./webserver/nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./webserver/certbot/conf:/etc/letsencrypt
       - ./webserver/certbot/www:/var/www/certbot
-    environment:
-      - DOMAIN=1wa.co
     ports:
       - 80:80
     restart: unless-stopped
