@@ -14,11 +14,11 @@ services:
       - ./webserver/certbot/conf:/etc/letsencrypt
       - ./webserver/certbot/www:/var/www/certbot
     environment:
-      - APP_DOMAIN=1wa.co
+      - DOMAIN=1wa.co
     ports:
       - 80:80
     restart: unless-stopped
-    command: /bin/sh -c "envsubst < /etc/nginx/conf.d/default.template.conf > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;' && exec nginx -t"
+    command: /bin/sh -c "envsubst < /etc/nginx/conf.d/default.template.conf > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"
 
   certbot:
     container_name: certbot
