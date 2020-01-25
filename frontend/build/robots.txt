@@ -1,0 +1,17 @@
+User-agent: Yandex
+Disallow: /yandex_00e61d58662ce86c.html
+Disallow: /google6eea180141f4a67e.html
+Disallow: /wmail_e4e2ff8efe568027699a760ec65a0d10.html
+Host: https://1wa.co
+
+User-agent: Googlebot
+Disallow: /yandex_00e61d58662ce86c.html
+Disallow: /google6eea180141f4a67e.html
+Disallow: /wmail_e4e2ff8efe568027699a760ec65a0d10.html
+
+User-agent: *
+Disallow: /yandex_00e61d58662ce86c.html
+Disallow: /google6eea180141f4a67e.html
+Disallow: /wmail_e4e2ff8efe568027699a760ec65a0d10.html
+
+Sitemap: https://1wa.co/sitemap.xml
