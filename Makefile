@@ -9,8 +9,8 @@ run:
 
 certbot-test:
 	@cd webserver
-	@chmod +x ./register_ssl_for_domain.sh
-	@./register_ssl_for_domain.sh \
+	@chmod +x ./webserver/register_ssl_for_domain.sh
+	@./webserver/register_ssl_for_domain.sh \
 								--domains "1wa.co www.1wa.co" \
 								--email truewebartisans@gmail.com \
 								--data-path ./certbot \
@@ -18,8 +18,8 @@ certbot-test:
 
 certbot:
 	@cd webserver
-	@chmod +x ./register_ssl_for_domain.sh
-	@./register_ssl_for_domain.sh \
+	@chmod +x ./webserver/register_ssl_for_domain.sh
+	@./webserver/register_ssl_for_domain.sh \
 								--domains "1wa.co www.1wa.co" \
 								--email truewebartisans@gmail.com \
 								--data-path ./certbot \
