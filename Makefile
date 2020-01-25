@@ -8,21 +8,19 @@ build:
 	@echo "[✔️] App build complete!"
 
 certbot-test:
-	@cd webserver
 	@chmod +x ./webserver/register_ssl_for_domain.sh
 	@./webserver/register_ssl_for_domain.sh \
 								--domains "1wa.co www.1wa.co" \
 								--email truewebartisans@gmail.com \
-								--data-path ./certbot \
+								--data-path ./webserver/certbot \
 								--staging 1
 
 certbot-prod:
-	@cd webserver
 	@chmod +x ./webserver/register_ssl_for_domain.sh
 	@./webserver/register_ssl_for_domain.sh \
 								--domains "1wa.co www.1wa.co" \
 								--email truewebartisans@gmail.com \
-								--data-path ./certbot \
+								--data-path ./webserver/certbot \
 								--staging 0
 
 deploy-test:
