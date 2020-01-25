@@ -1,0 +1,15 @@
+# docker-compose.prod.yml by Vic Shóstak <truewebartisans@gmail.com> (https://1wa.co)
+
+version: "3.7"
+
+services:
+  nginx:
+    volumes:
+      - ./frontend/build:/usr/share/nginx/html
+      - ./webserver/nginx/default.template.conf:/etc/nginx/conf.d/default.template.conf
+      - ./webserver/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./webserver/certbot/conf:/etc/letsencrypt
+      - ./webserver/certbot/www:/var/www/certbot
+    ports:
+      - 80:80
+      - 443:443
