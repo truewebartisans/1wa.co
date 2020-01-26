@@ -1,13 +1,9 @@
-FROM node:alpine as builder
+FROM node:alpine
 
 LABEL maintainer="Vic Shóstak <truewebartisans@gmail.com>"
 
 WORKDIR /frontend
 COPY package*.json ./
-RUN npm install
+RUN npm install --only=production
 COPY . .
 RUN npm run build:prod
-
-FROM nginx:alpine
-
-COPY --from=builder /frontend/build /usr/share/nginx/html/
