@@ -1,5 +1,3 @@
-import AddToHomeScreen from "a2hs.js";
-
 // Styles
 import "../scss/_main.scss";
 
@@ -11,7 +9,9 @@ if (stickyElements.length > 0) {
   import("stickyfilljs").then(Stickyfill => Stickyfill.add(stickyElements));
 }
 
-// Add to Home Screen
-AddToHomeScreen({
-  fontFamily: '"Inter var", Inter, sans-serif'
+// Banner for Add PWA to Home Screen
+import("a2hs.js").then(AddToHomeScreen => {
+  AddToHomeScreen({
+    fontFamily: '"Inter var", Inter, sans-serif'
+  });
 });
