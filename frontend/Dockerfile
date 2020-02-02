@@ -1,4 +1,4 @@
-FROM node:alpine AS build-stage
+FROM node:alpine
 
 LABEL maintainer="Vic Shóstak <truewebartisans@gmail.com>"
 
@@ -7,7 +7,3 @@ COPY package*.json ./
 RUN npm install --only=production
 COPY . .
 RUN npm run build:prod
-
-FROM nginx:alpine AS production-stage
-
-COPY --from=build-stage /frontend/build/ /usr/share/nginx/html
