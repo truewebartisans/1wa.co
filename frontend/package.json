@@ -5,10 +5,11 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel ./src/pug/index.pug --open",
-    "build": "PARCEL_WORKERS=1 parcel build ./src/pug/*.pug -d ./build",
+    "start": "parcel src/pug/index.pug --open",
+    "clear": "rm -rf ./build",
+    "build": "PARCEL_WORKERS=1 parcel build src/pug/*.pug -d build",
     "copy:common": "cp -R ./src/common/* ./build",
-    "build:prod": "npm run build && npm run copy:common"
+    "build:prod": "npm run clear && npm run build && npm run copy:common"
   },
   "repository": {
     "type": "git",
