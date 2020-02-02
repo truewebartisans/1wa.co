@@ -1,23 +1,13 @@
-FROM node:alpine AS base
+FROM node:alpine AS build-stage
 
 LABEL maintainer="Vic Shóstak <truewebartisans@gmail.com>"
 
 WORKDIR /frontend
-
-FROM base AS dependencies
-
 COPY package*.json ./
 RUN npm install --only=production
-
-FROM dependencies AS build
-
-WORKDIR /frontend
-COPY src ./
+COPY . .
 RUN npm run build:prod
 
-FROM node:alpine AS release
+FROM nginx:alpine AS production-stage
 
-WORKDIR /frontend
-COPY --from=dependencies /frontend/package.json ./
-RUN npm install --only=production
-COPY --from=build /frontend ./
+COPY --from=build-stage /frontend/build/ /usr/share/nginx/html
