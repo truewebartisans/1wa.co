@@ -1,13 +1,13 @@
 {
   "name": "1wa.co",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "True web artisans site.",
-  "main": "main.js",
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel src/pug/index.pug --open",
+    "start": "parcel src/index.html --open",
     "clear": "rm -rf ./build",
-    "build": "PARCEL_WORKERS=1 parcel build src/pug/*.pug -d build",
+    "build": "PARCEL_WORKERS=1 parcel build src/*.html -d build",
     "copy:common": "cp -R ./src/common/* ./build",
     "build:prod": "npm run clear && npm run build && npm run copy:common"
   },
@@ -29,20 +29,12 @@
   },
   "homepage": "https://github.com/truewebartisans/1wa.co#readme",
   "dependencies": {
-    "a2hs.js": "^0.4.5",
-    "animate.css": "^3.7.2",
-    "cssnano": "^4.1.10",
-    "parcel-bundler": "^1.12.4",
-    "pug": "^2.0.4",
-    "sass": "^1.26.5",
+    "animate.css": "^4.1.0",
+    "fonts.css": "^2.0.0",
+    "reset.css": "^2.0.2",
     "stickyfilljs": "^2.1.0"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1"
+    "parcel-bundler": "^1.12.4"
   }
 }
