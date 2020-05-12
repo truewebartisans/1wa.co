@@ -34,6 +34,13 @@ body {
   font-weight: 300;
 }
 
+@media screen and (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--black);
+    color: var(--white);
+  }
+}
+
 h1 {
   font-size: calc(var(--font-size) + 40px);
   line-height: calc(var(--font-size) + 40px);
@@ -92,4 +99,14 @@ aside > img {
   bottom: 24px;
   width: 400px;
   margin: 0 auto;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  aside > img {
+    opacity: 0.75;
+    transition: opacity 0.5s ease-in-out;
+  }
+  aside > img:hover {
+    opacity: 1;
+  }
 }
