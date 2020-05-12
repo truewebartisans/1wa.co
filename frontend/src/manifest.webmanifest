@@ -1,0 +1,13 @@
+{
+  "name": "True web artisans",
+  "short_name": "1wa",
+  "icons": [
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "512x512"
+    }
+  ],
+  "background_color": "#fee04a",
+  "theme_color": "#ffffff",
+  "display": "fullscreen"
+}

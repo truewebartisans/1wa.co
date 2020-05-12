@@ -4,7 +4,6 @@
   "description": "True web artisans site.",
   "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html --open",
     "clear": "rm -rf ./build",
     "build": "PARCEL_WORKERS=1 parcel build src/*.html -d build",
@@ -19,8 +18,7 @@
     "www",
     "site",
     "pure",
-    "web",
-    "dev"
+    "web"
   ],
   "author": "Vic Shóstak <truewebartisans@gmail.com> (https://1wa.co)",
   "license": "MIT",
@@ -28,12 +26,6 @@
     "url": "https://github.com/truewebartisans/1wa.co/issues"
   },
   "homepage": "https://github.com/truewebartisans/1wa.co#readme",
-  "dependencies": {
-    "animate.css": "^4.1.0",
-    "fonts.css": "^2.0.0",
-    "reset.css": "^2.0.2",
-    "stickyfilljs": "^2.1.0"
-  },
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
   }

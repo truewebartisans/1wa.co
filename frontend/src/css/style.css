@@ -1,7 +1,5 @@
-@import "../../node_modules/animate.css/source/_base.css";
-@import "../../node_modules/animate.css/source/sliding_entrances/slideInUp.css";
-
 @import "../css/fonts.css";
+@import "../css/animate.css";
 @import "../css/reset.css";
 
 :root {
@@ -40,24 +38,39 @@ h1 {
   font-size: calc(var(--font-size) + 40px);
   line-height: calc(var(--font-size) + 40px);
   font-weight: 700;
-  margin-bottom: calc(var(--font-size) + 24px);
+  margin-bottom: 48px;
 }
 
 h2 {
   font-size: calc(var(--font-size) + 12px);
   line-height: calc(var(--font-size) + 12px);
   font-weight: 600;
-  margin-bottom: calc(var(--font-size) + 12px);
+  margin-bottom: 36px;
+}
+
+ul {
+  list-style-image: url("../images/dot.svg");
+  margin-left: 16px;
+}
+
+ul > li {
+  padding-left: 8px;
+  margin-bottom: 8px;
+}
+
+strong {
+  font-weight: 500;
 }
 
 p {
   line-height: calc(var(--font-size) + 8px);
+  margin-bottom: 24px;
 }
 
 p.lead {
   font-size: calc(var(--font-size) + 4px);
   line-height: calc(var(--font-size) + 12px);
-  margin-bottom: calc(var(--font-size) + 32px);
+  margin-bottom: 56px;
   font-weight: 400;
 }
 
@@ -65,10 +78,18 @@ p.lead {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 64px;
-  padding: 96px;
+  padding: 96px 128px;
+}
+
+main > .block {
+  margin-bottom: 56px;
 }
 
 aside > img {
-  width: 360px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 24px;
+  bottom: 24px;
+  width: 400px;
   margin: 0 auto;
 }
