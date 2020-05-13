@@ -1,0 +1,145 @@
+@import "../css/fonts.css";
+@import "../css/animate.css";
+@import "../css/reset.css";
+
+:root {
+  /* Font */
+  --variable-font-family: "Inter var", sans-serif;
+  --default-font-family: "Inter", sans-serif;
+  --font-size: 24px;
+  --line-height: calc(var(--font-size) * 1.5);
+
+  /* Color */
+  --black: #4f4f4f;
+  --white: #ffffff;
+  --grey: #e5e5e5;
+  --green: #27ae60;
+}
+
+html {
+  font-family: var(--default-font-family);
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: var(--variable-font-family);
+  }
+}
+
+body {
+  background-color: var(--white);
+  font-size: var(--font-size);
+  line-height: var(--font-size);
+  color: var(--black);
+  font-weight: 300;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--black);
+    color: var(--white);
+  }
+}
+
+h1 {
+  font-size: calc(var(--font-size) + 40px);
+  line-height: calc(var(--font-size) + 40px);
+  font-weight: 700;
+  margin-bottom: 48px;
+}
+
+h2 {
+  font-size: calc(var(--font-size) + 12px);
+  line-height: calc(var(--font-size) + 12px);
+  font-weight: 600;
+  margin-bottom: 36px;
+}
+
+ul {
+  list-style-image: url("../images/dot.svg");
+  margin-left: 16px;
+}
+
+ul > li {
+  padding-left: 8px;
+  margin-bottom: 14px;
+}
+
+strong {
+  font-weight: 500;
+}
+
+a {
+  color: var(--black);
+  text-decoration: none;
+  border-bottom: 2px solid var(--green);
+}
+
+a:hover {
+  border-bottom: 0;
+}
+
+p {
+  line-height: calc(var(--font-size) + 8px);
+  margin-bottom: 24px;
+}
+
+p.lead {
+  font-size: calc(var(--font-size) + 4px);
+  line-height: calc(var(--font-size) + 12px);
+  margin-bottom: 56px;
+  font-weight: 400;
+}
+
+p.lead > strong {
+  font-weight: 600;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 64px;
+}
+main {
+  padding: 96px 32px 96px 128px;
+}
+
+main > .block {
+  margin-bottom: 56px;
+}
+
+aside {
+  padding: 96px 128px 96px 32px;
+}
+
+aside > figure {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 24px;
+  bottom: 24px;
+}
+
+aside > figure > img.bird {
+  width: 64px;
+  margin: 0 auto -20px;
+}
+
+aside > figure > img.boy {
+  width: 460px;
+  margin: 0 auto;
+}
+
+aside > figure > img.swoosh {
+  width: 320px;
+  margin: 24px auto;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  aside > figure > img {
+    opacity: 0.75;
+    transition: opacity 0.5s ease-in-out;
+  }
+  aside > figure > img:hover {
+    opacity: 1;
+  }
+}
