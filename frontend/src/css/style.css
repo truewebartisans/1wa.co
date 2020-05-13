@@ -62,11 +62,21 @@ ul {
 
 ul > li {
   padding-left: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 14px;
 }
 
 strong {
   font-weight: 500;
+}
+
+a {
+  color: var(--black);
+  text-decoration: none;
+  border-bottom: 2px solid var(--green);
+}
+
+a:hover {
+  border-bottom: 0;
 }
 
 p {
@@ -81,32 +91,55 @@ p.lead {
   font-weight: 400;
 }
 
+p.lead > strong {
+  font-weight: 600;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 64px;
-  padding: 96px 128px;
+}
+main {
+  padding: 96px 32px 96px 128px;
 }
 
 main > .block {
   margin-bottom: 56px;
 }
 
-aside > img {
+aside {
+  padding: 96px 128px 96px 32px;
+}
+
+aside > figure {
   position: -webkit-sticky;
   position: sticky;
   top: 24px;
   bottom: 24px;
-  width: 400px;
+}
+
+aside > figure > img.bird {
+  width: 64px;
+  margin: 0 auto -20px;
+}
+
+aside > figure > img.boy {
+  width: 460px;
   margin: 0 auto;
 }
 
+aside > figure > img.swoosh {
+  width: 320px;
+  margin: 24px auto;
+}
+
 @media screen and (prefers-color-scheme: dark) {
-  aside > img {
+  aside > figure > img {
     opacity: 0.75;
     transition: opacity 0.5s ease-in-out;
   }
-  aside > img:hover {
+  aside > figure > img:hover {
     opacity: 1;
   }
 }
