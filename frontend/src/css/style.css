@@ -10,8 +10,8 @@
   --line-height: calc(var(--font-size) * 1.5);
 
   /* Color */
-  --black: #4f4f4f;
-  --white: #ffffff;
+  --black: #404042;
+  --white: #f5f3ee;
   --grey: #e5e5e5;
   --green: #27ae60;
 }
@@ -77,6 +77,12 @@ a {
 
 a:hover {
   border-bottom: 0;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  a {
+    color: var(--white);
+  }
 }
 
 p {
