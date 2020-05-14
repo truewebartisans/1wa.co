@@ -52,7 +52,7 @@ h2 {
 }
 
 ul {
-  list-style-image: url("../images/dot.svg");
+  list-style-image: url("images/dot.svg");
   margin-left: 16px;
 }
 
