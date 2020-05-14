@@ -4,11 +4,10 @@
   "description": "True web artisans site.",
   "main": "",
   "scripts": {
-    "start": "parcel src/index.html --open",
-    "clear": "rm -rf ./build",
-    "build": "PARCEL_WORKERS=1 parcel build src/*.html -d build",
-    "copy:common": "cp -R ./src/common/* ./build",
-    "build:prod": "npm run clear && npm run build && npm run copy:common"
+    "clear": "rm -rf ./dist",
+    "start": "npm run clear && npx eleventy --serve",
+    "watch": "npm run clear && npx eleventy --watch",
+    "build": "npm run clear && npx eleventy"
   },
   "repository": {
     "type": "git",
@@ -27,6 +26,6 @@
   },
   "homepage": "https://github.com/truewebartisans/1wa.co#readme",
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "clean-css": "^4.2.3"
   }
 }
