@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/truewebartisans/1wa.co#readme",
   "devDependencies": {
-    "clean-css": "^4.2.3"
+    "clean-css": "^4.2.3",
+    "terser": "^4.6.13"
   }
 }

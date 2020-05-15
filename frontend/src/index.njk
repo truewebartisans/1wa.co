@@ -13,7 +13,7 @@ title: A team of professional product managers, UX specialists, talented develop
         philosopher, product manager and founder of this friendly company.
       </p>
     </header>
-    <div class="block">
+    <section>
       <h2>What are we doing?</h2>
       <p>
         I personally and my team of IT specialists around the world&nbsp;&mdash;
@@ -37,8 +37,8 @@ title: A team of professional product managers, UX specialists, talented develop
           </li>
         </ul>
       </nav>
-    </div>
-    <div class="block">
+    </section>
+    <section>
       <h2>How do we do this?</h2>
       <p>
         First of all, we are developers who know a lot about DX and support
@@ -60,25 +60,12 @@ title: A team of professional product managers, UX specialists, talented develop
         <strong>Docker</strong>
         containers.
       </p>
-    </div>
+    </section>
   </main>
   <aside>
-    <figure>
-      <img
-        src="images/true_web_artisans-bird.svg"
-        class="bird animated slideInDown"
-        alt="true web artisans bird"
-      />
-      <img
-        src="images/true_web_artisans-boy.svg"
-        class="boy"
-        alt="true web artisans boy"
-      />
-      <img
-        src="images/true_web_artisans-swoosh.svg"
-        class="swoosh animated slideInUp"
-        alt="true web artisans swoosh"
-      />
-    </figure>
+    {% include "partials/logo.njk" %}
   </aside>
+  <footer>
+    {% include "partials/footer.njk" %}
+  </footer>
 </div>

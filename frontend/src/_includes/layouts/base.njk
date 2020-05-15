@@ -1,7 +1,7 @@
-{% set css %} {% include "css/reset.css" %} {% include "css/fonts.css" %} {%
-include "css/animate.css" %} {% include "css/style.css" %} {% endset %}
-
 <!DOCTYPE html>
+{% set css %} {% include "css/reset.css" %} {% include "css/fonts.css" %} {%
+include "css/animate.css" %} {% include "css/style.css" %} {% endset %} {% set
+js %} {% include "js/script.js" %} {% endset %}
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -23,10 +23,16 @@ include "css/animate.css" %} {% include "css/style.css" %} {% endset %}
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="manifest" href="manifest.json" />
     <style>
+      /* prettier-ignore */
       {{ css | cssmin | safe }}
     </style>
   </head>
   <body itemscope="itemscope" itemtype="http://schema.org/WebPage">
     {{ content | safe }}
+    {% include "partials/cookie-confirm.njk" %}
+    <script>
+      // prettier-ignore
+      {{ js | jsmin | safe }}
+    </script>
   </body>
 </html>
