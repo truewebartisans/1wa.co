@@ -108,7 +108,7 @@ p.lead > strong {
 
 .wrapper > main {
   grid-area: main;
-  padding: 96px 32px 96px 128px;
+  padding: 96px 16px 96px 128px;
 }
 
 .wrapper > main > section {
@@ -117,7 +117,7 @@ p.lead > strong {
 
 .wrapper > aside {
   grid-area: aside;
-  padding: 96px 128px 96px 32px;
+  padding: 96px 128px 96px 16px;
 }
 
 .wrapper > aside > figure {
@@ -200,4 +200,5 @@ p.lead > strong {
 
 .cookie-confirm.hidden {
   display: none;
+  transition: 0.5s ease;
 }
