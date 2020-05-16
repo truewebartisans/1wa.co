@@ -52,7 +52,7 @@ h2 {
 }
 
 ul {
-  list-style-image: url("images/dot.svg");
+  list-style-image: url("/images/dot.svg");
   margin-left: 16px;
 }
 
@@ -65,6 +65,10 @@ strong {
   font-weight: 500;
 }
 
+em {
+  font-style: italic;
+}
+
 a {
   color: var(--black);
   text-decoration: none;
@@ -72,6 +76,7 @@ a {
 }
 
 a:hover {
+  color: var(--green);
   border-bottom: 0;
 }
 
@@ -97,6 +102,8 @@ p.lead > strong {
   font-weight: 600;
 }
 
+/* Wrapper */
+
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -105,6 +112,8 @@ p.lead > strong {
     "footer footer";
   column-gap: 64px;
 }
+
+/* Main */
 
 .wrapper > main {
   grid-area: main;
@@ -115,10 +124,21 @@ p.lead > strong {
   margin-bottom: 56px;
 }
 
+/* Main nav breadcrumbs */
+
+.wrapper > main > nav.breadcrumbs {
+  font-size: calc(var(--font-size) - 4px);
+  margin-bottom: 56px;
+}
+
+/* Aside */
+
 .wrapper > aside {
   grid-area: aside;
   padding: 96px 128px 96px 16px;
 }
+
+/* Aside logo figure */
 
 .wrapper > aside > figure {
   position: -webkit-sticky;
@@ -153,12 +173,34 @@ p.lead > strong {
   }
 }
 
+/* Footer */
+
 .wrapper > footer {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  column-gap: 64px;
   grid-area: footer;
   background-color: var(--black);
   color: var(--white);
   padding: 96px 128px;
   font-size: calc(var(--font-size) - 4px);
+}
+
+.wrapper > footer > section a {
+  color: var(--white);
+}
+
+.wrapper > footer > section a:hover {
+  color: var(--green);
+}
+
+.wrapper > footer > section:last-child {
+  text-align: center;
+}
+
+.wrapper > footer > section:last-child a {
+  margin-left: 2px;
+  margin-right: 2px;
 }
 
 /* Cookie confirm banner */
