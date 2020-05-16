@@ -7,6 +7,7 @@
 
   /* Color */
   --black: hsla(240, 2%, 25%, 1);
+  --black-light: hsla(240, 2%, 20%, 1);
   --black-dark: hsla(240, 2%, 15%, 1);
   --white: hsla(43, 26%, 95%, 1);
   --white-dark: hsla(43, 26%, 85%, 1);
@@ -192,6 +193,12 @@ p.lead > strong {
   text-align: center;
   background-color: var(--white-dark);
   padding: 64px 128px 32px;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .wrapper > section.action {
+    background-color: var(--black-light);
+  }
 }
 
 /* Footer */
