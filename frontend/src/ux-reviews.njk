@@ -4,20 +4,21 @@ permalink: "{{ page.filePathStem }}.html"
 title: UX efficiency reviews
 description: Behind every successful business are the most efficiency websites or web apps. Especially on these highly competitive days.
 keywords: ux, ux schema, ux reviews
+action: Need an UX efficiency review
 ---
 
 <div class="wrapper">
   <main aria-label="Main content">
     {% include "partials/breadcrumb.njk" %}
     <header>
-      <h1>UX efficiency reviews</h1>
+      <h1>{{ title }}</h1>
       <p class="lead">
         Behind every successful business are the most efficiency websites or web
         apps. Especially on these <strong>highly competitive</strong> days.
       </p>
     </header>
     <section>
-      <h2>Our working model</h2>
+      <h2>Working model</h2>
       <p>
         Let's take a look at our working model, which has already helped many
         projects to stay <strong>profitable</strong>:
@@ -31,6 +32,9 @@ keywords: ux, ux schema, ux reviews
     </section>
   </main>
   <aside aria-label="Secondary graphics"></aside>
+  <section class="action" aria-label="Feedback form">
+    {% include "partials/action.njk" %}
+  </section>
   <footer aria-label="Footer">
     {% include "partials/footer.njk" %}
   </footer>

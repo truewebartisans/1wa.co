@@ -7,8 +7,9 @@
 
   /* Color */
   --black: hsla(240, 2%, 25%, 1);
-  --black-dark: hsla(240, 2%, 19%, 1);
+  --black-dark: hsla(240, 2%, 15%, 1);
   --white: hsla(43, 26%, 95%, 1);
+  --white-dark: hsla(43, 26%, 85%, 1);
   --green: hsla(145, 63%, 42%, 1);
 }
 
@@ -33,7 +34,7 @@ body {
 @media screen and (prefers-color-scheme: dark) {
   body {
     background-color: var(--black);
-    color: var(--white);
+    color: var(--white-dark);
   }
 }
 
@@ -49,6 +50,13 @@ h2 {
   line-height: calc(var(--font-size) + 12px);
   font-weight: 600;
   margin-bottom: 36px;
+}
+
+h3 {
+  font-size: calc(var(--font-size) + 8px);
+  line-height: calc(var(--font-size) + 8px);
+  font-weight: 600;
+  margin-bottom: 32px;
 }
 
 ul {
@@ -82,7 +90,7 @@ a:hover {
 
 @media screen and (prefers-color-scheme: dark) {
   a {
-    color: var(--white);
+    color: var(--white-dark);
   }
 }
 
@@ -109,6 +117,7 @@ p.lead > strong {
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "main aside"
+    "action action"
     "footer footer";
   column-gap: 64px;
 }
@@ -173,6 +182,18 @@ p.lead > strong {
   }
 }
 
+/* Action */
+
+.wrapper > section.action {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 64px;
+  grid-area: action;
+  text-align: center;
+  background-color: var(--white-dark);
+  padding: 64px 128px 32px;
+}
+
 /* Footer */
 
 .wrapper > footer {
@@ -181,13 +202,13 @@ p.lead > strong {
   column-gap: 64px;
   grid-area: footer;
   background-color: var(--black);
-  color: var(--white);
+  color: var(--white-dark);
   padding: 96px 128px;
   font-size: calc(var(--font-size) - 4px);
 }
 
 .wrapper > footer > section a {
-  color: var(--white);
+  color: var(--white-dark);
 }
 
 .wrapper > footer > section a:hover {
@@ -203,6 +224,12 @@ p.lead > strong {
   margin-right: 2px;
 }
 
+@media screen and (prefers-color-scheme: dark) {
+  .wrapper > footer {
+    background-color: var(--black-dark);
+  }
+}
+
 /* Cookie confirm banner */
 
 .cookie-confirm {
@@ -211,7 +238,7 @@ p.lead > strong {
   column-gap: 64px;
   align-items: center;
   background-color: var(--black);
-  color: var(--white);
+  color: var(--white-dark);
   font-size: calc(var(--font-size) - 4px);
   padding: 16px 128px;
   position: fixed;
@@ -226,9 +253,9 @@ p.lead > strong {
 
 .cookie-confirm > section > .cookie-confirm-button {
   font-size: calc(var(--font-size) - 8px);
-  border: 2px solid var(--white);
+  border: 2px solid var(--white-dark);
   background-color: transparent;
-  color: var(--white);
+  color: var(--white-dark);
   font-weight: 600;
   border-radius: 24px;
   padding: 8px 24px;
@@ -236,11 +263,21 @@ p.lead > strong {
 }
 
 .cookie-confirm > section > .cookie-confirm-button:hover {
-  background-color: var(--white);
+  background-color: var(--white-dark);
   color: var(--black);
 }
 
 .cookie-confirm.hidden {
   display: none;
   transition: 0.5s ease;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .cookie-confirm {
+    background-color: var(--black-dark);
+  }
+
+  .cookie-confirm > section > .cookie-confirm-button:hover {
+    color: var(--black-dark);
+  }
 }

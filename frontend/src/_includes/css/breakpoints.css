@@ -1,0 +1,249 @@
+/* Breakpoints */
+
+@media screen and (min-device-width: 320px) {
+  :root {
+    --font-size: 16px;
+  }
+
+  h1 {
+    font-size: calc(var(--font-size) + 25px);
+    line-height: calc(var(--font-size) + 25px);
+  }
+
+  h2 {
+    font-size: calc(var(--font-size) + 8px);
+    line-height: calc(var(--font-size) + 8px);
+  }
+
+  h3 {
+    font-size: calc(var(--font-size) + 4px);
+    line-height: calc(var(--font-size) + 4px);
+  }
+
+  ul {
+    margin-left: 0;
+  }
+
+  ul > li {
+    padding-left: 4px;
+    margin-bottom: 10px;
+    line-height: calc(var(--font-size) + 4px);
+  }
+
+  p.lead {
+    margin-bottom: 32px;
+  }
+
+  .wrapper {
+    grid-template-areas:
+      "main"
+      "aside"
+      "action"
+      "footer";
+  }
+
+  .wrapper,
+  .wrapper > section.action,
+  .wrapper > footer {
+    grid-template-columns: 1fr;
+  }
+
+  .wrapper > main,
+  .wrapper > aside,
+  .wrapper > section.action,
+  .wrapper > footer {
+    padding: 32px 16px;
+  }
+
+  .wrapper > main > section {
+    margin-bottom: 32px;
+  }
+
+  .wrapper > main > nav.breadcrumbs {
+    font-size: var(--font-size);
+    margin-bottom: 32px;
+  }
+
+  .wrapper > main {
+    padding-bottom: 0;
+  }
+
+  .wrapper > aside {
+    padding-top: 0;
+  }
+
+  .wrapper > aside > figure {
+    position: relative;
+  }
+
+  .wrapper > aside > figure > img.bird {
+    width: 48px;
+    margin: 0 auto -14px;
+  }
+
+  .wrapper > aside > figure > img.boy {
+    width: 300px;
+  }
+
+  .wrapper > aside > figure > img.swoosh {
+    width: 180px;
+  }
+
+  .wrapper > footer {
+    font-size: var(--font-size);
+  }
+
+  .wrapper > footer > section:last-child {
+    text-align: left;
+  }
+
+  .cookie-confirm {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 16px;
+  }
+
+  .cookie-confirm > section > .cookie-confirm-button {
+    font-size: calc(var(--font-size) - 4px);
+    margin-top: 16px;
+  }
+}
+
+@media screen and (min-device-width: 768px) {
+  :root {
+    --font-size: 18px;
+  }
+
+  h1 {
+    font-size: calc(var(--font-size) + 30px);
+    line-height: calc(var(--font-size) + 30px);
+  }
+
+  .wrapper > main,
+  .wrapper > aside,
+  .wrapper > section.action,
+  .wrapper > footer {
+    padding: 48px 24px;
+  }
+
+  .cookie-confirm {
+    grid-template-columns: 2fr 1fr;
+    text-align: left;
+    padding: 16px 24px;
+  }
+
+  .cookie-confirm > section > .cookie-confirm-button {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-device-width: 1024px) {
+  :root {
+    --font-size: 20px;
+  }
+
+  h1 {
+    font-size: calc(var(--font-size) + 35px);
+    line-height: calc(var(--font-size) + 35px);
+  }
+
+  .wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "main aside"
+      "action action"
+      "footer footer";
+  }
+
+  .wrapper > main,
+  .wrapper > aside,
+  .wrapper > section.action,
+  .wrapper > footer {
+    padding: 56px 32px;
+  }
+
+  .wrapper > aside > figure {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+
+  .wrapper > aside > figure > img.bird {
+    width: 64px;
+    margin: 0 auto -20px;
+  }
+
+  .wrapper > aside > figure > img.boy {
+    width: 460px;
+    margin: 0 auto;
+  }
+
+  .wrapper > aside > figure > img.swoosh {
+    width: 320px;
+    margin: 24px auto;
+  }
+
+  .cookie-confirm {
+    grid-template-columns: 2fr 1fr;
+    text-align: left;
+    padding: 24px 32px;
+  }
+}
+
+@media screen and (min-device-width: 1280px) {
+  :root {
+    --font-size: 22px;
+  }
+
+  p.lead {
+    margin-bottom: 56px;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "main aside"
+      "action action"
+      "footer footer";
+    column-gap: 64px;
+  }
+
+  .wrapper > main,
+  .wrapper > section.action {
+    padding: 96px 16px 96px 96px;
+  }
+
+  .wrapper > aside {
+    padding: 96px 96px 96px 16px;
+  }
+
+  .wrapper > section.action {
+    grid-template-columns: 1fr 1fr;
+    padding: 64px 96px 32px;
+  }
+
+  .wrapper > main > section {
+    margin-bottom: 56px;
+  }
+
+  .wrapper > main > nav.breadcrumbs {
+    font-size: calc(var(--font-size) - 4px);
+    margin-bottom: 56px;
+  }
+
+  .wrapper > footer {
+    grid-template-columns: 1fr 2fr 1fr;
+    font-size: calc(var(--font-size) - 4px);
+    padding: 96px;
+  }
+
+  .wrapper > footer > section:last-child {
+    text-align: center;
+  }
+
+  .cookie-confirm {
+    grid-template-columns: 2fr 1fr;
+    text-align: left;
+    padding: 16px 96px;
+  }
+}
