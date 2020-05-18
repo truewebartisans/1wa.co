@@ -50,6 +50,21 @@
         "name": "Inter-Bold.woff",
         "type": "woff"
       }
+    ],
+    "images": [
+      {
+        "name": "true_web_artisans-bird.svg",
+        "width": 64
+      },
+      {
+        "name": "true_web_artisans-boy.svg",
+        "width": 460
+      },
+      {
+        "name": "true_web_artisans-swoosh.svg",
+        "width": 320
+      }
     ]
-  }
+  },
+  "prerender": ["ux-reviews", "ui-design", "microservices", "web-apps"]
 }

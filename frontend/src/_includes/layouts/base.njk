@@ -23,6 +23,7 @@ include "css/animate.css" %} {% include "css/style.css" %} {% include
     <link rel="mask-icon" href="favicon.svg" color="#fee04a" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="manifest" href="manifest.json" />
+    <!-- Preload fonts -->
     {% for font in seoData.preload.fonts %}
     <link
       rel="preload"
@@ -30,6 +31,19 @@ include "css/animate.css" %} {% include "css/style.css" %} {% include
       as="font"
       type="font/{{ font.type }}"
     />
+    {% endfor %}
+    <!-- Preload images -->
+    {% for image in seoData.preload.images %}
+    <link
+      rel="preload"
+      href="/images/{{ image.name }}"
+      as="image"
+      media="(max-width: {{ image.width }}px)"
+    />
+    {% endfor %}
+    <!-- Prerender pages -->
+    {% for page in seoData.prerender %}
+    <link rel="prerender" href="https://1wa.co/{{ page }}" />
     {% endfor %}
     <style>
       /* prettier-ignore */
