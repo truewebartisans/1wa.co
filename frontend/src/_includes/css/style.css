@@ -247,11 +247,20 @@ p.lead > strong {
   background-color: var(--black);
   color: var(--white-dark);
   font-size: calc(var(--font-size) - 4px);
+  line-height: calc(var(--font-size) + 4px);
   padding: 16px 128px;
   position: fixed;
   bottom: 0;
   right: 0;
   left: 0;
+}
+
+.cookie-confirm > section > a {
+  color: var(--white-dark);
+}
+
+.cookie-confirm > section > a:hover {
+  color: var(--green);
 }
 
 .cookie-confirm > section:last-child {
