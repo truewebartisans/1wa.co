@@ -1,3 +1,55 @@
 {
-  "brand_name": "True web artisans"
+  "brand_name": "True web artisans",
+  "preload": {
+    "fonts": [
+      {
+        "name": "Inter-roman.var.woff2",
+        "type": "woff2"
+      },
+      {
+        "name": "Inter-italic.var.woff2",
+        "type": "woff2"
+      },
+      {
+        "name": "Inter-Light.woff2",
+        "type": "woff2"
+      },
+      {
+        "name": "Inter-Light.woff",
+        "type": "woff"
+      },
+      {
+        "name": "Inter-Regular.woff2",
+        "type": "woff2"
+      },
+      {
+        "name": "Inter-Regular.woff",
+        "type": "woff"
+      },
+      {
+        "name": "Inter-Medium.woff2",
+        "type": "woff2"
+      },
+      {
+        "name": "Inter-Medium.woff",
+        "type": "woff"
+      },
+      {
+        "name": "Inter-SemiBold.woff2",
+        "type": "woff2"
+      },
+      {
+        "name": "Inter-SemiBold.woff",
+        "type": "woff"
+      },
+      {
+        "name": "Inter-Bold.woff2",
+        "type": "woff2"
+      },
+      {
+        "name": "Inter-Bold.woff",
+        "type": "woff"
+      }
+    ]
+  }
 }

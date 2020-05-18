@@ -23,6 +23,14 @@ include "css/animate.css" %} {% include "css/style.css" %} {% include
     <link rel="mask-icon" href="favicon.svg" color="#fee04a" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="manifest" href="manifest.json" />
+    {% for font in seoData.preload.fonts %}
+    <link
+      rel="preload"
+      href="/fonts/{{ font.name }}"
+      as="font"
+      type="font/{{ font.type }}"
+    />
+    {% endfor %}
     <style>
       /* prettier-ignore */
       {{ css | cssmin | safe }}
