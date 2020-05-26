@@ -1,0 +1,42 @@
+---
+layout: layouts/base.njk
+permalink: "{{ page.filePathStem }}.html"
+title: Smart backend microservices
+description: Microservices allow your business to take more and more orders. No clear and user-friendly interface will work, unless there is a fast and stable backend.
+keywords: backend, backend as a service, micro service, go micro service
+action: Need a smart backend microservice
+---
+
+<div class="wrapper">
+  <main aria-label="Main content">
+    {% include "partials/breadcrumb.njk" %}
+    <header>
+      <h1>{{ title }}</h1>
+      <p class="lead">
+        Microservices <strong>allow your business</strong> to accept more and
+        more orders. Even the most intuitive and user-friendly interface will
+        not work, unless there is a <strong>secure</strong> and
+        <strong>stable</strong> backend behind it.
+      </p>
+    </header>
+    <section>
+      <h2>Advantages of a microservices basis</h2>
+      <p>
+        We highlight the following <strong>benefits</strong> of using
+        microservices for your online business:
+      </p>
+      <ul>
+        <li>Simple maintenance and support</li>
+        <li>Maximum speed under high load</li>
+        <li>Problem-free scalability</li>
+      </ul>
+    </section>
+  </main>
+  <aside aria-label="Secondary graphics"></aside>
+  <section class="action" aria-label="Feedback form">
+    {% include "partials/action.njk" %}
+  </section>
+  <footer aria-label="Footer">
+    {% include "partials/footer.njk" %}
+  </footer>
+</div>

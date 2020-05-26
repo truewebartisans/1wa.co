@@ -1,0 +1,42 @@
+---
+layout: layouts/base.njk
+permalink: "{{ page.filePathStem }}.html"
+title: High-quality web applications
+description: A tool to convert website visitors to satisfied customers of your online business. Who just works for you without lunch or a weekend.
+keywords: webapp, web apps, pwa, progressive web apps, web applications
+action: Need a high-quality web application
+---
+
+<div class="wrapper">
+  <main aria-label="Main content">
+    {% include "partials/breadcrumb.njk" %}
+    <header>
+      <h1>{{ title }}</h1>
+      <p class="lead">
+        A tool to convert website visitors to
+        <strong>satisfied customers</strong> of your online business. Who just
+        works for you <strong>without</strong> lunch or a weekend.
+      </p>
+    </header>
+    <section>
+      <h2>Why is it profitable?</h2>
+      <p>
+        The main reasons for the total <strong>migration</strong> of many online
+        businesses to web applications today are:
+      </p>
+      <ul>
+        <li>Almost complete replacement of mobile applications</li>
+        <li>Easier delivery of complex services to the end user</li>
+        <li>Better user interaction through interactive elements</li>
+        <li>Ability to work with weak Internet signal</li>
+      </ul>
+    </section>
+  </main>
+  <aside aria-label="Secondary graphics"></aside>
+  <section class="action" aria-label="Feedback form">
+    {% include "partials/action.njk" %}
+  </section>
+  <footer aria-label="Footer">
+    {% include "partials/footer.njk" %}
+  </footer>
+</div>

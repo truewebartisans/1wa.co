@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% set css %} {% include "css/reset.css" %} {% include "css/animate.css" %} {%
+include "css/style.css" %} {% include "css/breakpoints.css" %} {% endset %} {%
+set js %} {% include "js/script.js" %} {% endset %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ seoData.brand_name }} → {{ title }}</title>
+    <meta name="keywords" content="{{ keywords }}" />
+    <meta name="description" content="{{ description }}" />
+    <meta name="theme-color" content="#fee04a" />
+    <meta property="og:title" content="{{ seoData.brand_name }}" />
+    <meta property="og:site_name" content="1wa.co" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://1wa.co/" />
+    <meta property="og:image" content="https://1wa.co/apple-touch-icon.png" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="800" />
+    <link rel="icon" href="favicon.svg" />
+    <link rel="mask-icon" href="favicon.svg" color="#fee04a" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.json" />
+    <!-- Preload fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      />
+    </noscript>
+    <!-- Preload images -->
+    {% for image in seoData.preload.images %}
+    <link
+      rel="preload"
+      href="/images/{{ image.name }}"
+      as="image"
+      media="(max-width: {{ image.width }}px)"
+    />
+    {% endfor %}
+    <!-- Prerender pages -->
+    {% for page in seoData.prerender %}
+    <link rel="prerender" href="https://1wa.co/{{ page }}" />
+    {% endfor %}
+    <style>
+      /* prettier-ignore */
+      {{ css | cssmin | safe }}
+    </style>
+  </head>
+  <body itemscope="itemscope" itemtype="http://schema.org/WebPage">
+    {{ content | safe }}
+    {% include "partials/cookie-confirm.njk" %}
+    <script>
+      // prettier-ignore
+      {{ js | jsmin | safe }}
+    </script>
+  </body>
+</html>

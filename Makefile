@@ -3,10 +3,6 @@
 run:
 	@cd frontend && npm start
 
-build:
-	@cd frontend && npm run build:prod
-	@echo "[✔️] App build complete!"
-
 certbot-test:
 	@chmod +x ./webserver/register_ssl_for_domain.sh
 	@./webserver/register_ssl_for_domain.sh \
