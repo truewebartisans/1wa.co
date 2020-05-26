@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-{% set css %} {% include "css/reset.css" %} {% include "css/fonts.css" %} {%
-include "css/animate.css" %} {% include "css/style.css" %} {% include
-"css/breakpoints.css" %} {% endset %} {% set js %} {% include "js/script.js" %}
-{% endset %}
+{% set css %} {% include "css/reset.css" %} {% include "css/animate.css" %} {%
+include "css/style.css" %} {% include "css/breakpoints.css" %} {% endset %} {%
+set js %} {% include "js/script.js" %} {% endset %}
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -24,14 +23,24 @@ include "css/animate.css" %} {% include "css/style.css" %} {% include
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="manifest" href="manifest.json" />
     <!-- Preload fonts -->
-    {% for font in seoData.preload.fonts %}
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="preload"
-      href="/fonts/{{ font.name }}"
-      as="font"
-      type="font/{{ font.type }}"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
     />
-    {% endfor %}
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      />
+    </noscript>
     <!-- Preload images -->
     {% for image in seoData.preload.images %}
     <link

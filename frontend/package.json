@@ -25,8 +25,8 @@
     "url": "https://github.com/truewebartisans/1wa.co/issues"
   },
   "homepage": "https://github.com/truewebartisans/1wa.co#readme",
-  "devDependencies": {
+  "dependencies": {
     "clean-css": "^4.2.3",
-    "terser": "^4.6.13"
+    "terser": "^4.7.0"
   }
 }
