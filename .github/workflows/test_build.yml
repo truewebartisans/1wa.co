@@ -25,6 +25,8 @@ jobs:
       # Build
       - name: Build
         uses: TartanLlama/actions-eleventy@master
+        with:
+          install_dependencies: true
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
