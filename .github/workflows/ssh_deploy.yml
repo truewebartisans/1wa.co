@@ -28,4 +28,4 @@ jobs:
           passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
           rm: true
           source: "dist/"
-          target: "/var/www/1wa.co/html"
+          target: "${{ secrets.REMOTE_DIR }}"
