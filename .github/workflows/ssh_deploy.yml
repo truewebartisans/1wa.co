@@ -16,6 +16,7 @@ jobs:
       - name: Build eleventy
         uses: TartanLlama/actions-eleventy@master
         with:
+          args: --output html
           install_dependencies: true
 
       # Copy to remote server
@@ -27,5 +28,5 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
           rm: true
-          source: "dist/*.*"
+          source: "html/"
           target: "${{ secrets.REMOTE_DIR }}"
