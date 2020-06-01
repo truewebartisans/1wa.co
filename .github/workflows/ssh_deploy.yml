@@ -1,4 +1,4 @@
-name: Deploy via SSH
+name: Deploy Eleventy via SSH
 
 on:
   push:
@@ -10,17 +10,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE,
+      # so your workflow can access it
       - uses: actions/checkout@master
 
-      # Build eleventy
-      - name: Build eleventy
+      # Build your static website with Eleventy
+      - name: Build Eleventy
         uses: TartanLlama/actions-eleventy@master
         with:
           args: --output html
           install_dependencies: true
 
-      # Copy to remote server
-      - name: Copy build files via SSH
+      # Copying files and artifacts via SSH
+      - name: Copying files to server
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.REMOTE_HOST }}
