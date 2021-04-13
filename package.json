@@ -1,13 +1,13 @@
 {
   "name": "1wa.co",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "True web artisans site.",
   "main": "",
   "scripts": {
     "clear": "rm -rf ./dist",
-    "start": "npm run clear && npx eleventy --serve",
-    "watch": "npm run clear && npx eleventy --watch",
-    "build": "npm run clear && npx eleventy"
+    "start": "npm run clear && npx @11ty/eleventy --serve",
+    "watch": "npm run clear && npx @11ty/eleventy --watch",
+    "build": "npm run clear && npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",
