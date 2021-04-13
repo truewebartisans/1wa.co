@@ -7,7 +7,7 @@
     "clear": "rm -rf ./dist",
     "start": "npm run clear && npx @11ty/eleventy --serve",
     "watch": "npm run clear && npx @11ty/eleventy --watch",
-    "build": "npm run clear && npx @11ty/eleventy"
+    "build": "npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",
